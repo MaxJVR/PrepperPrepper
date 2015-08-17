@@ -10,7 +10,6 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         models.user.hasMany(models.resources, {through: "user_resources"});
-        // associations can be defined here
       }
     }
   });
