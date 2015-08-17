@@ -21,7 +21,7 @@ app.use(cookieParser());
 // app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', require('./routes/index'));
+app.use('/', require('./controllers/index'));
 app.use('/threates', require('./controllers/threates'));
 // use the user
 app.use('/login', require('./controllers/user/login'));
