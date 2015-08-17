@@ -1,4 +1,9 @@
 {
+  "development": {
+    "database": "PrepperPrepper",
+    "host": "127.0.0.1",
+    "dialect": "postgresql"
+  },
   "development_paul": {
     "username": "postgres",
     "password": "davidson",
