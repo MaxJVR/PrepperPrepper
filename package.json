@@ -1,0 +1,24 @@
+{
+  "name": "PrepperPrepper",
+  "version": "1.0.0",
+  "description": "Prepper Prepper is a Node.js app that allows users to evaluate any potential threats for disaster in their area and get information on how to preppare accordingly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulRossDavidson/PrepperPrepper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulRossDavidson/PrepperPrepper/issues"
+  },
+  "homepage": "https://github.com/PaulRossDavidson/PrepperPrepper",
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "sequelize": "^3.5.1"
+  }
+}
