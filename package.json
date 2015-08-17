@@ -10,7 +10,6 @@
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
-    "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "pg": "^4.4.1",
     "pg-hstore": "^2.3.2",
@@ -18,8 +17,7 @@
     "serve-favicon": "~2.3.0",
     "stylus": "0.42.3",
     "sequelize-cli": "~1.7.4",
-    "ejs": "~2.3.3",
-    "sequelize": "~3.5.1"
+    "ejs": "~2.3.3"
   },
   "description": "Prepper Prepper is a Node.js app that allows users to evaluate any potential threats for disaster in their area and get information on how to preppare accordingly.",
   "main": "app.js",
