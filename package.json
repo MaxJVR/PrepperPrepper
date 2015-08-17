@@ -17,7 +17,7 @@
     "serve-favicon": "~2.3.0",
     "stylus": "0.42.3",
     "sequelize-cli": "~1.7.4",
-    "ejs": "~2.3.3",
+    "ejs": "~2.3.3"
   },
   "description": "Prepper Prepper is a Node.js app that allows users to evaluate any potential threats for disaster in their area and get information on how to preppare accordingly.",
   "main": "app.js",
