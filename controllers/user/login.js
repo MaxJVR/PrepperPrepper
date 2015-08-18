@@ -1,6 +1,6 @@
-var db = require('../../models');
 var express = require('express');
 var router = express.Router();
+var db = require('../../models');
 
 //display login form
 router.get('/',function(req,res){
@@ -14,13 +14,14 @@ router.post('/',function(req,res){
         res.send("err");
       }else if (user){
         req.session.user = user.id;//logged in.....
-
         //req.flash('success', 'You are logged in')
-        res.redirect('/');
-
+        res.send('succesful login!');
       }else{
         //req.flash('danger','invalid username or password');
-        res.redirect('/');
+        res.send('failed!');
+        //res.redirect('/');
       }
   });
 });
+
+module.exports = router;

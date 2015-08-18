@@ -13,6 +13,22 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // models.user.hasMany(models.resources, {through: "user_resources"});
+      },
+      authenticate: function(email,password,callback){
+        this.find({where:{email:email}}).then(function(user){
+          if(user){
+            bcrypt.compare(password,user.password,function(err,result){
+              if(err){
+                callback(err);
+              }else{
+                callback(null, result ? user : false);
+              }
+            });
+          }
+          else{
+            callback(null, false);
+          }
+        }).catch(callback);
       }
     },
     hooks: {
