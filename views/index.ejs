@@ -1,1 +1,11 @@
 <p>Hello World!</p>
+
+
+<form action="threates" method="get">
+	<select name="location">
+		<% for(var i=0; i<db.length; ++i){ %>
+			<option value="<%= db[i].name %>"><%= db[i].name %></option>
+		<% } %>
+	</select>
+	<input type="submit" value="Go" />
+</form>
