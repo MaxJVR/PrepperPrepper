@@ -8,6 +8,7 @@ var ejs = require('ejs');
 var session = require('express-session');
 var db = require('./models');
 var app = express();
+var ejsLayouts = require('express-ejs-layouts');
 
 
 // set up a new session.
@@ -28,6 +29,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(ejsLayouts);
 // app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
