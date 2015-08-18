@@ -1,3 +1,14 @@
 <p>Hello World!</p>
 
 Print out the database information here
+
+<form action="threates" method="get">
+	<select name="city">
+		<% for(var i=0; i<cities.length; ++i){ %> 
+			<option value="<%= cities[i].get().name %>">
+				<%= cities[i].get().name %>
+			</option>
+		<% } %>
+	</select>
+	<input type="submit" value="Go" />
+</form>
