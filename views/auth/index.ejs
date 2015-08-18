@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrepperPrepper</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+          <h1>My home page</h1>
+          <% if(typeof currentUser !== 'undefined') { %>
+            Hello, <b><%= typeof currentUser.name === 'string' ? currentUser.name : 'Unknown' %></b>.
+            <a href="/logout" class="btn btn-primary">Logout</a>
+          <% }else{ %>
+            <a href="/login" class="btn btn-primary">Login</a>
+            <a href="/signup" class="btn btn-primary">Signup</a>
+          <% } %>
+          <br><br>
+        </div>
+    </div>
+</body>
+</html>
+
