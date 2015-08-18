@@ -28,6 +28,7 @@ app.use('/threates', require('./controllers/threates'));
 app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
 app.use('/profile', require('./controllers/user/profile'));
+app.use('/logout', require('./controllers/user/logout'));
 
 // set up usser sessions.
 app.use(session({
