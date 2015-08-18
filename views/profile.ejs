@@ -1,0 +1,174 @@
+<br>
+<br>
+<div class="container">
+  <div class="row">
+
+<!-- Profile Card -->
+    <div class="col s12 m6 l5">
+      <div class="card medium z-depth-5 profileCard">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator responsive-img" src="http://www.placecage.com/300/300">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><h3>Profile Name<i class="material-icons right">info_outline</i><h3></span>
+          <p><a href="#"></a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">This is your profile!<i class="material-icons right">close</i></span>
+          <p>Here is some more information about you, or maybe we will update your profile pic here?</p>
+        </div>
+      </div>
+    </div>
+
+<!-- Achievments Card -->
+    <div class="col s12 m6 l5 offset-l2">
+      <div class="card medium z-depth-5 achievementCard">
+        <div class="card-image">
+          <img class="responsive-img" src="https://lh3.googleusercontent.com/h9xqvvuUe_jooJ_6KykNcfi4vPfIIAeQncid9OxV7Yo57tIwzb5Ms269d9AQzWUFEHg=w300">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+        <%  %>
+          <h5>My Achievments</h5>
+        <%  %>
+        </div>
+        <div class="card-action">
+          <a href="#">All Achievments</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+<!-- Supply Card -->
+    <div class="col s12 m12 l12 offset-">
+      <div class="card-panel hoverable white z-depth-5 supplyCard">
+        <table class"bordered hoverable centered responsive-table">
+          <thead>
+            <tr>
+                <th data-field="item">Item</th>
+                <th data-field="quantity">Quantity</th>
+                <th data-field="new"><a class="waves-effect waves-circle waves-light btn-floating green tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Add Items"data-target="modal-supplies"><i class="material-icons">add</i></a></th>
+            </tr>
+          </thead>
+          <tbody>
+          <%  %>
+            <tr>
+              <td>Food</td>
+              <td>72hrs</td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
+            </tr>
+          <%  %>
+            <tr>
+              <td>Water</td>
+              <td>72hrs</td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
+            </tr>
+            <tr>
+              <td>Firearms</td>
+              <td>3</td>
+                <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+                <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
+            </tr>
+            <tr>
+              <td>Ammo</td>
+              <td>300rds</td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
+            </tr>
+          <%  %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<!--   Disaster Cards (forEach) -->
+  <div class="row">
+  <%  %>
+    <div class="col s12 m6 l6">
+      <div class="card medium disasterCard">
+        <div class="card-image">
+          <img src="http://wallpaperbang.com/wp-content/uploads/2015/08/Earthquake-HD-Wallpapers.jpg">
+          <span class="card-title">Name of Disaster</span>
+        </div>
+        <div class="card-content">
+          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+  <%  %>
+    <div class="col s12 m6 l6">
+      <div class="card medium">
+        <div class="card-image">
+          <img src="http://wallpoper.com/images/00/43/08/11/2012-doomsday-wallpaper-2012-doomsday-movies_00430811.jpg">
+          <span class="card-title">Name of Disaster</span>
+        </div>
+        <div class="card-content">
+          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l6">
+      <div class="card medium">
+        <div class="card-image">
+          <img src="http://www.wallpaperup.com/uploads/wallpapers/2013/07/26/124280/big_thumb_a508095ccf7de6d20d87b2de44a43b68.jpg">
+          <span class="card-title">Name of Disaster</span>
+        </div>
+        <div class="card-content">
+          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6">
+      <div class="card medium">
+        <div class="card-image">
+          <img src="http://i.kinja-img.com/gawker-media/image/upload/t_original/d4q8zz18np446g3tzkqb.jpg">
+          <span class="card-title">Name of Disaster</span>
+        </div>
+        <div class="card-content">
+          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+<!-- Modal For Supplies-->
+  <div id="modal-supplies" class="modal bottom-sheet">
+    <div class="modal-content">
+      <div class="row">
+        <div class="input-field col s12 m6 l3 offset-l3">
+          <input id="item_name" type="text" length="20">
+          <label for="item_name">Item</label>
+        </div>
+        <div class="input-field col s12 m6 l3">
+          <input id="item_quantity" type="text" length="10">
+          <label for="item_quantity">Quantity</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat amber">Update</a>
+    </div>
+  </div>
+
+</div>
