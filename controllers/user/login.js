@@ -3,7 +3,7 @@ var router = express.Router();
 
 //display login form
 router.get('/',function(req,res){
-    res.send('user/login');
+    res.render('auth/login');
 });
 
 //post/login
@@ -21,6 +21,14 @@ router.post('/',function(req,res){
         res.redirect('/user/login');
       }
   });
+  //res.redirect('/');
 });
+
+
+
+
+
+
+
 
 module.exports = router;
