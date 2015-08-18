@@ -1,70 +1,74 @@
-var db = require("./models");
-db.city_info.create({name: 'seattle', flood_info:'something to think about',
-earthquake_info:'Seattle.gov cites earthquakes as the most serious threat to Seattle.
-bout 15% of Seattle's total area consists of liquifiable soil. They estimate a 7.0
-could create 5,000- 30,000 landslides depending on how wet the soil is. Some of the
-outlying areas could be cut off for up to a month. The 820 or so unreinforced masonry
-buildings in Seattle are mostly concentrated in areas expected, and would not fare well.',
- marauder_info:'Although Seattle has a slightly lower crime rate for it's size. Like
- any city, people will be the biggest concern in a calamity.',
-}).then(function(log){console.log('Seattle created!')});
+City:           Seattle
 
-db.city_info.create({name: 'seattle', flood_info: 'something to think about', earthquake_info: 'Seattle.gov says'}).then(function(data){console.log('Seattle created!')});
+Earthquake Info:    According to Seattle.gov, 15% of Seattle's total area consists of liquefiable soil and a 7.0 earthquake has the potential of creating 5,000 – 30,000 landslides depending on how wet the soil is. The unreinforced masonry buildings in Seattle are mostly concentrated in areas expected to be hit by the earthquake.
 
+Earthquake Threat Level:        5 high
 
-db.city_info.create({name: 'seattle', flood_info: 'something to think about', earthquake_info: 'Seattle.gov says'}).then(function(data){console.log('Seattle created!')});
+Flood Info:     Based on Seattle’s history, this city deals well with rain fall and is well equipped with dealing with severe amounts of water. Even though the soil is highly liquefiable as mentioned above, Seattle has fewer than 10 buildings that have had more than on flood loss.
 
-//in this order:
-city name
-Flood_info
-earthquake_info
-marauder_info
-Seattle
-    --> Risk: High
-    --> Seattle has fewer than ten buildings that have had more than one flood loss
-    --> Seattle is right on the the coast giving it a high score'
-Seattle:
-Seattle.gov cites earthquakes as the most serious threat to Seattle. About 15% of Seattle's total area consists of liquifiable soil. They estimate a 7.0 could create 5,000- 30,000 landslides depending on how wet the soil is. Some of the outlying areas could be cut off for up to a month. The 820 or so unreinforced masonry buildings in Seattle are mostly concentrated in areas expected, and would not fare well.
+Flood Threat Level:         2 low-average
 
-Seattle:
-Although Seattle has a slightly lower crime rate for it's size. Like any city, people will be the biggest concern in a calamity.
+Marauder Info:  Seattle has a slightly lower crime rate for its size. Like any city, people will be the biggest concern in a calamity. Although this is relatively difficult to predict, given its relatively recent track record, it is safe to predict high levels of marauders.
 
+Marauder Threat Level:      3 average
 
-Spokane:
-    --> Spokane is placed right over the Spokane river which Fema describes as a possible 'floodway'
-    --> Risk: Moderate-High
+---------------------------------------------------
+City:           Spokane
 
-Spokane:
-While there was a swarm of 13 earthquakes in 2010, experts have never considered Spokane at a major risk of a large earthquake. Homefacts.com lists a 10% chance of a 5.0 quake in the next 50 years.
-It is worth noting, that a similar swarm of quakes occurred in L'Aquila, Italy followed by a devastating M6.3 quake.
+Earthquake Info:    While there was an alarming 13 earthquakes in 2010, experts have never considered Spokane at a major risk of a large earthquake. Homefacts.com lists a 10% chance of a 5.0 quake in the next 50 years.
 
-Spokane:
-Having the 8th highest and large population, Spokane has potential for major risk of roving bands of marauders if the criminals got together after a catastrophe.
+Earthquake Threat Level:        2 low-average
 
+Flood Info:     Being placed right over the Spokane river, FEMA describes this city as a possible ‘floodway’. This, and the fact that Spokane is not relatively well primed for heavy rainfall is a cause for this city to remain constantly on the lookout for flood warnings and preparations against them.
 
-Bellevue:
-    --> Risk: Minimal-Moderate
-Bellvue shares a fault like with Seattle and has many of the same risks. There is a major potential for soil liquification at the Newport shores neighborhood by Lake Washington. There are many landslides that would happen around steep slopes, particularly east of Weowna Park.
+Flood Threat Level:         4 high-average
 
-Bellevue:
-ranked the 37th safest city in Washington by safewise.com. Bellevue is a reasonably safe place, as long as the roving hoards don't migrate.
+Marauder Info:  Spokane has a high rate of crime within Washington, according to neighborhoodscouts.com. This, and being a highly dense population combines for a very bad risk of being looted during a natural disaster.
 
+Marauder Threat Level:      4 high-average
 
-Vancouver:
-Vancouver:
-    --> Risk: Moderate
-    --> Vancouver is wrapped around by the Columbia River
-Vancouver has a many small earthquakes and a small overall danger. Anchor that narrow china display to the wall and you're set.
+---------------------------------------------------
 
-Vancouver:
-Halfway between Spokane and Bellvue in crime rankings, Vancouver is a fairly save place. It is, however, right next to Portland, with a dense population and higher crime rate.
+City:           Bellevue
 
+Earthquake Info:    Bellevue shares a fault line, just like Seattle and shares many of the same risks. The increasing number of sky-rises within Bellevue also does not make it a safe place to live or work.
 
-Everett:
-    --> Risk: high
-    --> Everett is surrounded by the Salish Sea putting it at a high risk for flooding.
+Earthquake Threat Level:        5 high
 
-With a fault line going through the city, and an abundance of old, unreinforced masonry buildings Everett has a high danger from an inevitable earthquake. Western neighborhoods with steep slopes are especially vulnerable to landslides and becoming isolated by impassible roads.
+Flood Info:     There is major potential for soil liquification at the Newport shores neighboring Lake Washington, and many landslides that would happen around steep sloes, particularly east of Weowna Park. But being located in Western Washington, this city is well equipped for lots of rainfall and would fare well in this case.
 
-Everett:
-With a higher crime rate than Seattle. If bands of marauders form in Washington, there will definitely be some formed here.
+Flood Threat Level:         2 low-average
+
+Marauder Info:  Bellevue is ranked as the 37th safest city in Washington by safewise.com. Bellevue is a reasonably safe place, as long as the roving hoards don't migrate.
+
+Marauder Threat Level:      1 low
+---------------------------------------------------
+
+City:           Vancouver
+
+Earthquake Info:    Vancouver has many small earthquakes throughout the years thus relieving pressure meaning that there is a small likelihood of a large earthquake going through the area.
+
+Earthquake Threat Level:        1 low
+
+Flood Info:     Vancouver is wrapped around by the Columbia River and expects a moderate level of flooding. This can be seen simply by browsing Vancouver flooding on google.com.
+
+Flood Threat Level:         4 high-average
+
+Marauder Info:  Halfway between Spokane and Bellevue in crime rankings, Vancouver is a fairly save place. It is, however, right next to Portland, with a dense population and higher crime rate.
+
+Marauder Threat Level:      1 low
+---------------------------------------------------
+
+City:           Everett
+
+Earthquake Info:    With a fault line going through the city and an abundance of old, unreinforced masonry buildings Everett has a high danger from an inevitable earthquake.
+
+Earthquake Threat Level:        4 high-average
+
+Flood Info:     Everett is surrounded by the Salish Sea putting it at a high risk for flooding. Western neighborhoods with steep slopes are especially vulnerable to landslides and becoming isolated by impassible roads.
+
+Flood Threat Level:         4 high-average
+
+Marauder Info:  With a higher crime rate than Seattle. If bands of marauders form in Washington, there will definitely be some formed here.
+
+Marauder Threat Level:      4 high-average
