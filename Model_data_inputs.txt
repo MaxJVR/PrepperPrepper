@@ -1,0 +1,70 @@
+var db = require("./models");
+db.city_info.create({name: 'seattle', flood_info:'something to think about',
+earthquake_info:'Seattle.gov cites earthquakes as the most serious threat to Seattle.
+bout 15% of Seattle's total area consists of liquifiable soil. They estimate a 7.0
+could create 5,000- 30,000 landslides depending on how wet the soil is. Some of the
+outlying areas could be cut off for up to a month. The 820 or so unreinforced masonry
+buildings in Seattle are mostly concentrated in areas expected, and would not fare well.',
+ marauder_info:'Although Seattle has a slightly lower crime rate for it's size. Like
+ any city, people will be the biggest concern in a calamity.',
+}).then(function(log){console.log('Seattle created!')});
+
+db.city_info.create({name: 'seattle', flood_info: 'something to think about', earthquake_info: 'Seattle.gov says'}).then(function(data){console.log('Seattle created!')});
+
+
+db.city_info.create({name: 'seattle', flood_info: 'something to think about', earthquake_info: 'Seattle.gov says'}).then(function(data){console.log('Seattle created!')});
+
+//in this order:
+city name
+Flood_info
+earthquake_info
+marauder_info
+Seattle
+    --> Risk: High
+    --> Seattle has fewer than ten buildings that have had more than one flood loss
+    --> Seattle is right on the the coast giving it a high score'
+Seattle:
+Seattle.gov cites earthquakes as the most serious threat to Seattle. About 15% of Seattle's total area consists of liquifiable soil. They estimate a 7.0 could create 5,000- 30,000 landslides depending on how wet the soil is. Some of the outlying areas could be cut off for up to a month. The 820 or so unreinforced masonry buildings in Seattle are mostly concentrated in areas expected, and would not fare well.
+
+Seattle:
+Although Seattle has a slightly lower crime rate for it's size. Like any city, people will be the biggest concern in a calamity.
+
+
+Spokane:
+    --> Spokane is placed right over the Spokane river which Fema describes as a possible 'floodway'
+    --> Risk: Moderate-High
+
+Spokane:
+While there was a swarm of 13 earthquakes in 2010, experts have never considered Spokane at a major risk of a large earthquake. Homefacts.com lists a 10% chance of a 5.0 quake in the next 50 years.
+It is worth noting, that a similar swarm of quakes occurred in L'Aquila, Italy followed by a devastating M6.3 quake.
+
+Spokane:
+Having the 8th highest and large population, Spokane has potential for major risk of roving bands of marauders if the criminals got together after a catastrophe.
+
+
+Bellevue:
+    --> Risk: Minimal-Moderate
+Bellvue shares a fault like with Seattle and has many of the same risks. There is a major potential for soil liquification at the Newport shores neighborhood by Lake Washington. There are many landslides that would happen around steep slopes, particularly east of Weowna Park.
+
+Bellevue:
+ranked the 37th safest city in Washington by safewise.com. Bellevue is a reasonably safe place, as long as the roving hoards don't migrate.
+
+
+Vancouver:
+Vancouver:
+    --> Risk: Moderate
+    --> Vancouver is wrapped around by the Columbia River
+Vancouver has a many small earthquakes and a small overall danger. Anchor that narrow china display to the wall and you're set.
+
+Vancouver:
+Halfway between Spokane and Bellvue in crime rankings, Vancouver is a fairly save place. It is, however, right next to Portland, with a dense population and higher crime rate.
+
+
+Everett:
+    --> Risk: high
+    --> Everett is surrounded by the Salish Sea putting it at a high risk for flooding.
+
+With a fault line going through the city, and an abundance of old, unreinforced masonry buildings Everett has a high danger from an inevitable earthquake. Western neighborhoods with steep slopes are especially vulnerable to landslides and becoming isolated by impassible roads.
+
+Everett:
+With a higher crime rate than Seattle. If bands of marauders form in Washington, there will definitely be some formed here.
