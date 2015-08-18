@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+      <h1>My home page</h1>
+      <% if(typeof currentUser !== 'undefined') { %>
+        Hello, <b><%= typeof currentUser.name === 'string' ? currentUser.name : 'Unknown' %></b>.
+        <a href="/logout" class="btn btn-primary">Logout</a>
+      <% }else{ %>
+        <a href="/login" class="btn btn-primary">Login</a>
+        <a href="/signup" class="btn btn-primary">Signup</a>
+      <% } %>
+      <br><br>
+
+
+<% include ../partials/footer.ejs %>
