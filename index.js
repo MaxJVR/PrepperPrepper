@@ -27,7 +27,7 @@ app.use('/threates', require('./controllers/threates'));
 app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
 app.use('/profile', require('./controllers/user/profile'));
-
+app.use('/logout', require('./controllers/user/logout'));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
