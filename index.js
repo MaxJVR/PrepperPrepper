@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var app = express();
+var session = require('express-session');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +28,13 @@ app.use('/threates', require('./controllers/threates'));
 app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
 app.use('/profile', require('./controllers/user/profile'));
+
+// set up usser sessions.
+app.use(session({
+  secret:'w8hi1v0lu89gwqu0moc8931fhyfidwa3r47v4',
+  resave: false,
+  saveUninitialized: true
+}));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

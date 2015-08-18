@@ -15,7 +15,7 @@ router.post('/',function(req,res){
       }else if (user){
         req.session.user = user.id;//logged in.....
         req.flash('success', 'You are logged in')
-        res.redirect('/');
+        res.redirect('/profile');
       }else{
         req.flash('danger','invalid username or password');
         res.redirect('/user/login');
@@ -23,12 +23,5 @@ router.post('/',function(req,res){
   });
   //res.redirect('/');
 });
-
-
-
-
-
-
-
 
 module.exports = router;

@@ -1,16 +1,26 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../../models');
 
 /* GET home page. */
 //display sign-in page
 router.get('/', function(req,res){
-  res.render('auth/signup');
+	if(req.query.city){
+  		res.render('auth/signup', { city : req.query.city });
+  	}
 });
 
 router.post('/',function(req,res){
-    //do sign up here (add user to database)
+	//res.send(req.body);
 
-    //user is signed up forward them to the home page
-    res.redirect('/');
+	db.user.create({
+		name : req.body.name,
+		email : req.body.email,
+		password : req.body.password,
+		city : req.body.city,
+	}).then(function(new_user){
+		res.send(new_user.get());
+	});
 });
+
 module.exports = router;
