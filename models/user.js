@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        models.user.hasMany(models.resources, {through: "user_resources"});
+        // models.user.hasMany(models.resources, {through: "user_resources"});
       }
     }
   });
