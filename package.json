@@ -20,6 +20,6 @@
     "body-parser": "^1.13.3",
     "ejs": "^2.3.3",
     "express": "^4.13.3",
-    "express-ejs-layouts": "^1.1.0"
+    "express-ejs-layouts": "~1.1.0"
   }
 }

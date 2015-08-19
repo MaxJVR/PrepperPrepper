@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var session = require('express-session');
+var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
 var app = express();
-var ejsLayouts = require('express-ejs-layouts');
 
 
 // set up a new session.
@@ -31,8 +31,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(ejsLayouts);
 // app.use(require('stylus').middleware(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/assets', express.static('public'));
 
 // defines currentUser in the session
 app.use(function(req,res,next){
@@ -60,7 +61,7 @@ app.use(function(req,res,next){
 
 //landing page
 app.use('/', require('./controllers/index'));
-app.use('/threates', require('./controllers/threates'));
+app.use('/threats', require('./controllers/threats'));
 // use the user
 app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
