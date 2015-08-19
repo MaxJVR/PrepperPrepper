@@ -1,16 +1,15 @@
 var db = require('../../models');
 var express = require('express');
 var router = express.Router();
-var db = require('../../models');
 
 /* GET home page. */
 //display sign-in page
 router.get('/', function(req,res){
 	if(req.query.city){
   		res.render('auth/signup', { city : req.query.city });
-  	}
+  }
   else{
-    res.render('auth/signup');
+    res.render('auth/signup', { city : false });
   }
 });
 

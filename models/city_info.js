@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
     marauder_info: DataTypes.STRING,
     flood_threat_level: DataTypes.INTEGER,
     earthquake_threat_level: DataTypes.INTEGER,
-    marauder_threat_level: DataTypes.INTEGER
+    marauder_threat_level: DataTypes.INTEGER,
+    suggested_meals: DataTypes.INTEGER,
+    suggested_gallons: DataTypes.INTEGER,
+    suggested_guns: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
