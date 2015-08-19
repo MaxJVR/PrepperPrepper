@@ -1,7 +1,12 @@
 body {
-background-color: #424242;
-/*background-image: url('http://pre14.deviantart.net/00ab/th/pre/f/2013/346/2/9/vault_tec_2299_by_shitmonlee-d6xq19t.jpg');
-background-size: cover;*/
+/*background-color: #424242;*/
+background-image: url('http://i.imgur.com/RYDbXUS.jpg');
+background-size: ;
+}
+
+.page_one{
+  background-image: url('public/images/radioactive.jpg');
+
 }
 
 /*MAIN PAGE*/
@@ -10,37 +15,38 @@ background-size: cover;*/
       height: 700px;
 }
 
+
 /*LOGIN PAGE*/
 /* label color */
-.input-field label {
+.sign-up label {
  color: #ffffff;
 }
 /* label focus color */
-.input-field input[type=text]:focus + label {
+.sign-up input[type=text]:focus + label {
  color: #ffc107;
 }
-.input-field input[type=email]:focus + label {
+.sign-up input[type=email]:focus + label {
  color: #ffc107;
 }
-.input-field input[type=password]:focus + label {
+.sign-up input[type=password]:focus + label {
  color: #ffc107;
 }
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.sign-up input[type=text]:focus {
  border-bottom: 1px solid #ffc107;
  box-shadow: 0 1px 0 0 #ffc107;
 }
-.input-field input[type=email]:focus {
+.sign-up input[type=email]:focus {
  border-bottom: 1px solid #ffc107;
  box-shadow: 0 1px 0 0 #ffc107;
 }
-.input-field input[type=password]:focus {
+.sign-up input[type=password]:focus {
  border-bottom: 1px solid #ffc107;
  box-shadow: 0 1px 0 0 #ffc107;
 }
 
 /* icon prefix focus color */
-.input-field .prefix.active {
+.sign-up .prefix.active {
  color: #ffc107;
 }
 

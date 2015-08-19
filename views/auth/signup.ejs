@@ -1,4 +1,4 @@
-    <div class="container">
+<!--     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <h1>Sign up!</h1>
@@ -18,4 +18,61 @@
                 </form>
             </div>
         </div>
+    </div> -->
+
+<div class="container">
+    <div class="card grey darken-4">
+        <div class="card-content white-text">
+          <div class="row">
+            <form class="col s12 form" method="POST" action="/signup">
+              <div class="row">
+               <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <select>
+                    <option value="" disabled selected>Choose your City!</option>
+                    <option value="1">Seattle</option>
+                    <option value="2">Bellevue2</option>
+                    <option value="3">Everett</option>
+                    <option value="4">Spokane</option>
+                    <option value="5">Vancouver</option>
+                  </select>
+                  <label></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <i class="material-icons prefix">perm_identity</i>
+                  <input id="name" type="text" name="name" class="form-control validate ">
+                  <label for="">Enter you name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" name="email" class="form-control validate">
+                  <label for="email">Enter your email</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" name="password" class="form-control validate">
+                  <label for="password">Enter your password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <i class="material-icons prefix">lock</i>
+                  <input id="password" type="password" name="password2" class="form-control validate">
+                  <label for="password2">Re-type your password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 right-align">
+                  <button id="sign-up" type="submit" name="action" class="waves-effect waves-light btn-flat amber">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
     </div>
+</div>
