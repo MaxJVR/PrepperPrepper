@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/MaxJVR/PrepperPrepper#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.13.3",
+    "connect-flash": "^0.1.1",
     "ejs": "^2.3.3",
     "express": "^4.13.3",
-    "express-ejs-layouts": "~1.1.0"
+    "express-ejs-layouts": "~1.1.0",
+    "express-session": "^1.11.3"
   }
 }
