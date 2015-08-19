@@ -9,6 +9,9 @@ router.get('/', function(req,res){
 	if(req.query.city){
   		res.render('auth/signup', { city : req.query.city });
   	}
+  else{
+    res.render('auth/signup');
+  }
 });
 
 router.post('/',function(req,res){
