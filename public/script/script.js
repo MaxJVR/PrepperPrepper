@@ -36,10 +36,6 @@ function make_slider( params_obj ){
     newSlider.reccomendedAmountMarker = $('<div class=".recTick"><span class="recHandleTracker"></span></div>')
     conElem.append(newSlider.reccomendedAmountMarker);
 
-    /*$('#waterSlider').parent().find('.recTick').css('margin-left', (((rulerBar.width()/100) * recommendedAmount)-2) + 'px');
-    $('#waterSlider').parent().find('.recHandleTracker').text('Rec:' + recommendedAmount);*/
-
-
     // create the functions to (re)scale the slider
     newSlider.set_scale = function(new_scale){
         
@@ -62,85 +58,7 @@ function make_slider( params_obj ){
             return true;
         }
     });
-
-/*
-        <div class="sliderWrapper">
-            
-            
-
-            <div class="recTick">
-                <span class="recHandleTracker"></span>
-            </div>
-
-            <div class="doubleRangeButton">Double Range</div>
-            <div class="foldRangeButton"></div>
-
-            <div id="waterSliderMin">Min: 0</div>
-            <div id="waterSliderMax">Max: 100</div>
-            <div id="waterSliderUnits">Units: Gallons</div>
-        </div>
-*/
-
-
-
-
-
-
-
-
-
-    /*// add the current range scale to this
-    var resourceSlider = {};
-
-    // set up the sliders on the profile page for the resources
     
-    // get the recommended amount of water
-    var waterRec = $('#recWaterHiddenInput').val();
-
-    var range_mul = 1;
-    var range_0 = 0;
-    var range_1 = 100;
-    var recommendedAmount = 17;
-
-
-    $('#waterSlider').slider({
-        value: 0,
-        min: range_0,
-        max: range_1,
-        slide: function( event, ui ){
-            $('#waterSlider').parent().find('.priHandleTracker').text( 'Have: ' + ui.value + ' Gallons' );
-            return true;
-        }
-    });
-
-
-
-    $('#waterSlider').children().eq(1).css('height','30px');
-
-    var rulerBar = $('#waterSlider').parent().find('.rulerBar');
-
-
-
-    $('#waterSlider').parent().find('.doubleRangeButton').click(function(){
-        
-        rulerBar.empty();
-        range_mul = .5;
-        for(var i=1; i< (range_1/(10)); ++i ){
-            rulerBar.append('<div class="rulerTick" style="margin-left:'+((rulerBar.width()/(10))-2)+'px;"><span class="tickNumber">'+(i*(10*range_mul))+'</span></div>');
-        }
-    });
-
-    // set the initial tick marks on the ruler
-    for(var i=1; i<(range_1/10); ++i ){
-        rulerBar.append('<div class="rulerTick" style="margin-left:'+((rulerBar.width()/10)-2)+'px;"><span class="tickNumber">'+(i*10)+'</span></div>');
-    }
-    
-    // set the initial position of the reccomended marker
-    $('#waterSlider').parent().find('.recTick').css('margin-left', (((rulerBar.width()/100) * recommendedAmount)-2) + 'px');
-
-
-    $('#waterSlider').parent().find('.recHandleTracker').text('Rec:' + recommendedAmount);*/
-
     return newSlider;
 
 }

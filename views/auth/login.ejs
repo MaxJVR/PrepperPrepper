@@ -1,4 +1,4 @@
-
+<!--
     <div class="container">
         <div class="row">
         <div class="col-md-6">
@@ -15,4 +15,38 @@
           </form>
         </div>
         </div>
+    </div> -->
+
+<br>
+<br>
+<div class="container">
+  <div class="card grey darken-4">
+    <div class="card-content white-text">
+    <br>
+      <div class="row">
+        <form class="col s12 form" method="POST" action="/login">
+          <div class="row">
+            <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" name="email" class="form-control validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+              <i class="material-icons prefix">lock</i>
+              <input id="password" type="password" name="password" class="form-control validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field sign-up col s12 m6 l8 offset-l2 right-align">
+              <button id="sign-up" type="submit" name="action" class="waves-effect waves-light btn-flat amber">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+
