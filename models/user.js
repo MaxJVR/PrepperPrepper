@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
   {
     classMethods: {
       associate: function(models) {
-        // models.user.hasMany(models.resources, {through: "user_resources"});
+        models.user.hasOne(models.city_info, {through: "user_city_info"});
+
       },
       authenticate: function(email,password,callback){
         this.find({where:{email:email}}).then(function(user){
@@ -40,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
             user.password = hash;
             cb(null,user);
           });
-        }); 
+        });
       }
     }
   });
