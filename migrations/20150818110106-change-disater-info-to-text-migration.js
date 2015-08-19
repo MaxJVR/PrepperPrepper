@@ -24,7 +24,7 @@ module.exports = {
           'city_infos',
           'marauder_info',
           {type: Sequelize.TEXT}
-        ),
+        )
       ];
   },
 
