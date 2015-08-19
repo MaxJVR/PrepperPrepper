@@ -34,7 +34,7 @@
   <div id="modal_signin" class="modal bottom-sheet">
     <div class="modal-content">
       <div class="row">
-        <form class="">
+        <form class="form" method="post" action="auth/login">
           <div class="input-field col s12 m6 l3 offset-l3">
             <i class="material-icons prefix">email</i>
             <input id="email" type="email" class="validate">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat amber">Login</a>
+      <input type="submit" class="modal-action modal-close waves-effect waves-light btn-flat amber">Login</a>
     </div>
   </div>
   <%- body %>
