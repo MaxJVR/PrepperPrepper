@@ -38,10 +38,10 @@ app.use('/assets', express.static('public'));
 // defines currentUser in the session
 app.use(function(req,res,next){
 
-  req.session.user = 14; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+ // req.session.user = 14; // COMMENT OUT WHEN NOT IN DEVELOPMENT
   if(req.session.user){
 
-    
+
     db.user.findById(req.session.user).then(function(user){
       req.currentUser = user;
       next();
