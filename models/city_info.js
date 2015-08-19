@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        models.city_info.belongsTo(models.user, {through: "user_city_info"});
+        models.city_info.belongsToMany(models.user, {through: "user_city_info"});
       }
     }
   });
