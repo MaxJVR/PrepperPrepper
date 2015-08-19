@@ -75,3 +75,65 @@ background-size: ;
   margin: 50px;
 }
 
+/* My styles for the sliders */
+
+.resourceSlider{
+	top:20px;
+	width: 400px;
+	margin: 20px 0px;
+}
+
+.sliderWrapper{
+	height: 200px;
+	background-color: red;
+}
+
+.priHandle{
+	height: 100px;
+}
+
+.recHandle{
+	height: 100px;
+}
+
+.priHandleTracker{
+	position: absolute;
+	top: -5px;
+}
+
+.recHandleTracker{
+	position: absolute;
+	top: 30px;
+	height: 32px;
+}
+
+.rulerBar{
+	background-color: silver;
+	height: 20px;
+}
+
+.rulerTick{
+	background-color: white;
+	width: 2px;
+	height: 20px;
+	float: left;
+	line-height: 20px;
+}
+
+.tickNumber{
+	padding: 5px;
+}
+
+.recTick{
+	position: relative;
+	top: -20px;
+	background-color: green;
+	width: 2px;
+	height: 40px;
+}
+
+.recHandleTracker{
+	top: 20px;
+	left: 10px;
+	width: auto;
+}
