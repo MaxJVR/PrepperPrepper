@@ -5,8 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
-var app = express();
+var session = require('express-session');
 var ejsLayouts = require('express-ejs-layouts');
+var db = require('./models');
+var app = express();
+
+
+// set up a new session.
+app.use(session({
+  secret:'w8hi1v0lu89gwqu0moc8931fhyfidwa3r47v4',
+  resave: false,
+  saveUninitialized: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,15 +31,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(ejsLayouts);
 // app.use(require('stylus').middleware(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/assets', express.static('public'));
+
+// defines currentUser in the session
+app.use(function(req,res,next){
+
+  req.session.user = 14; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+  if(req.session.user){
+
+    
+    db.user.findById(req.session.user).then(function(user){
+      req.currentUser = user;
+      next();
+    });
+
+  }else{
+    req.currentUser = false;
+    next();
+  }
+});
+
+
+app.use(function(req,res,next){
+  res.locals.currentUser = req.currentUser;
+  next();
+});
+
 //landing page
 app.use('/', require('./controllers/index'));
-app.use('/threates', require('./controllers/threates'));
+app.use('/threats', require('./controllers/threats'));
 // use the user
 app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
 app.use('/profile', require('./controllers/user/profile'));
 app.use('/logout', require('./controllers/user/logout'));
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
