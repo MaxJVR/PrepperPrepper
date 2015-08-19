@@ -2,11 +2,14 @@
 	<% for(var i=0; i<1; ++i){ //cities.length %>
 		<% var city_i = cities[0].get(); %>
 		<h1><%= city_i.name %></h1>
-		<h3>Flood risk assessment:</h3>
+		<h4>Flood risk assessment:</h4>
+		<h5><%= scale[city_i.flood_threat_level] %></h5>
 		<p><%= city_i.flood_info %></p>
-		<h3>Earthquake risk assessment:</h3>
+		<h4>Earthquake risk assessment:</h4>
+		<h5><%= scale[city_i.earthquake_threat_level] %></h5>
 		<p><%= city_i.earthquake_info %></p>
-		<h3>Marauders risk assessment:</h3>
+		<h4>Marauders risk assessment:</h4>
+		<h5><%= scale[city_i.marauder_threat_level] %></h5>
 		<p><%= city_i.marauder_info %></p>
 	<% } %>
 </div>
