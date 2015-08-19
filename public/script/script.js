@@ -12,7 +12,7 @@ $( document ).ready(function(){
 
   $('.modal-trigger').leanModal();
 
-   $('select').material_select();
+  $('select').material_select();
 
   // Pushpin for mini User Card in Achievements
   $('profileCardSmall').pushpin({ top: $('.row').offset().top });
