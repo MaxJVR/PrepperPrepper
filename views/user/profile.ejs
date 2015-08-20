@@ -135,7 +135,7 @@
             <tr>
               <td>Food</td>
               <td>Number of meals: <%= user.meals %></td>
-              <td>Living in <%= user.city %>, you should have <%= cities[0].suggested_meals %></td>
+              <td>Living in <%= city.findById(user.cityId) %>, you should have <%= cities[0].suggested_meals %></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
