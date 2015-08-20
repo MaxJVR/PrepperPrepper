@@ -17,7 +17,7 @@ function make_slider( params_obj ){
         slider: 0,
         importance:  (typeof (params_obj.importance) === undefined) ? params_obj.importance : 1,
         handlePosTracker: 0,
-        reccomendedAmount : params_obj.reccomendedAmount,
+        reccomendedAmount : parseInt(params_obj.container.find('.recommended_var').text()),
         reccomendedAmountMarker: 0,
         rulerBar: 0,
         set_scale: 0,
@@ -62,9 +62,15 @@ function make_slider( params_obj ){
         return this;
     }
 
+    // try and get a value from the html page
+    var parsed_text = parseInt(params_obj.container.find('.have_var').text());
+    var user_val = (typeof(parsed_text) === NaN) ? parsed_text : 0;
+
+    console.log(parsed_text);
+
     // jQuery ui does its magic and makes the slider
     newSlider.slider.slider({
-        value: 0,
+        value: parsed_text,
         min: 0,
         max: 100,
         slide: function( event, ui ){

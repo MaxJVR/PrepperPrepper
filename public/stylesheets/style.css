@@ -15,6 +15,9 @@ background-size: ;
       height: 700px;
 }
 
+.hidden_var{
+	display: none;
+}
 
 /*LOGIN PAGE*/
 /* label color */
