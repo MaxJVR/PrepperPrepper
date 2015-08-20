@@ -3,7 +3,6 @@
 
 	<div class="container"><h4>Hello <%= user.name %>, from <%= city.name %> </h4>
   </div>
-  <h3>Resources</h3>
 
 <br>
 <br>
@@ -29,7 +28,7 @@
     </div>
 
 <!-- Achievments Card -->
-    <div class="col s12 m6 l5 offset-l2">
+ <!--    <div class="col s12 m6 l5 offset-l2">
       <div class="card medium z-depth-5 white-text grey darken-4 achievementCard">
         <div class="card-image">
           <img class="responsive-img" src="https://lh3.googleusercontent.com/h9xqvvuUe_jooJ_6KykNcfi4vPfIIAeQncid9OxV7Yo57tIwzb5Ms269d9AQzWUFEHg=w300">
@@ -48,7 +47,7 @@
 
   </div>
 
-  <div class="row">
+  <div class="row"> -->
 <!-- Supply Card -->
     <div class="col s12 m12 l12 offset-">
       <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
@@ -63,22 +62,25 @@
           <tbody>
           <%  %>
             <tr>
+             <h3 class='center'>Resources</h3>
               <td>Food</td>
-              <td>Number of meals: <%= user.meals %></td>
-              <td>Living in , you should have</td>
+              <td>You have <%= user.meals %> meals stored.</td>
+              <td>Living in <%= city.name %>, you should store  <%= city.reqMeals %> meals.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
           <%  %>
             <tr>
               <td>Water</td>
-              <td>Gallons of water: <%= user.gallons %></td>
+              <td>You have <%= user.gallons %>gallons stored.</td>
+              <td>Living in <%= city.name %>, you should store  <%= city.reqGallons %> gallons.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
             <tr>
               <td>Firearms</td>
-              <td>Total number of guns: <%= user.guns %></td>
+              <td>You have <%= user.guns %> gun(s). Remember Ammo & gun safety.</td>
+              <td>Living in <%= city.name %>, you should store  <%= city.reqGuns %> gun(s).</td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
@@ -97,13 +99,13 @@
       <div class="card medium disasterCard">
         <div class="card-image">
           <img src="http://wallpaperbang.com/wp-content/uploads/2015/08/Earthquake-HD-Wallpapers.jpg">
-          <span class="card-title">Name of Disaster</span>
+          <span class="card-title">Earthquake</span>
         </div>
         <div class="card-content">
-          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+          <p><%= city.earthquakeInfo %></p>
         </div>
         <div class="card-action">
-          <a href="#">Learn More</a>
+          <a href="#">Make the div bigger somehow</a>
         </div>
       </div>
     </div>
@@ -112,13 +114,13 @@
       <div class="card medium">
         <div class="card-image">
           <img src="http://wallpoper.com/images/00/43/08/11/2012-doomsday-wallpaper-2012-doomsday-movies_00430811.jpg">
-          <span class="card-title">Name of Disaster</span>
+          <span class="card-title">Flood</span>
         </div>
         <div class="card-content">
-          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+          <p><%= city.floodInfo %></p>
         </div>
         <div class="card-action">
-          <a href="#">Learn More</a>
+          <a href="#">Make the div bigger somehow</a>
         </div>
       </div>
     </div>
@@ -126,13 +128,12 @@
       <div class="card medium">
         <div class="card-image">
           <img src="http://www.wallpaperup.com/uploads/wallpapers/2013/07/26/124280/big_thumb_a508095ccf7de6d20d87b2de44a43b68.jpg">
-          <span class="card-title">Name of Disaster</span>
+          <span class="card-title">Delete this</span>
         </div>
         <div class="card-content">
-          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
-        </div>
+          <p>We're not doing Nuclear threats (yet).</p> </div>
         <div class="card-action">
-          <a href="#">Learn More</a>
+          <a href="#">Make the div bigger somehow</a>
         </div>
       </div>
     </div>
@@ -141,10 +142,10 @@
       <div class="card medium">
         <div class="card-image">
           <img src="http://i.kinja-img.com/gawker-media/image/upload/t_original/d4q8zz18np446g3tzkqb.jpg">
-          <span class="card-title">Name of Disaster</span>
+          <span class="card-title">Marauders</span>
         </div>
         <div class="card-content">
-          <p>Here is some basic information on this disaster type. Follow the link below for more detailed inforamtion</p>
+         <p><%= city.marauderInfo %></p>
         </div>
         <div class="card-action">
           <a href="#">Learn More</a>
