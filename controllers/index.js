@@ -9,4 +9,19 @@ router.get('/', function(req, res) {
 	});
 });
 
+city = "Seattle";
+city_state = ["Seattle" : "WA"];
+state = city_state[city];
+
+var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/'+state+'/'+city+'.json';
+    request(url, function(error, response, data) {
+      var parsedData = JSON.parse(data);
+    };
+
+
+
+
+
+
+
 module.exports = router;
