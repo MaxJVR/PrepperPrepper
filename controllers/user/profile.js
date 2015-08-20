@@ -24,9 +24,9 @@ form_generator.make_resource_slider = function(resource_name){
 // });
 
 router.get('/', function(req, res) {
-  db.city.findAll({include:[db.user]}).then(function(all_cities){
-    res.render('user/profile', {cities : all_cities, user: req.currentUser});
-  });
+    db.city.findById(req.currentUser.cityId).then(function(city){
+    res.render('user/profile', {user: req.currentUser, city : city});
+    });
 });
 
 router.post("/", function(req,res){
