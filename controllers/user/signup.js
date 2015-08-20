@@ -31,8 +31,8 @@ router.post('/',function(req,res){
     }).spread(function(user,created){
       if(created){
         // req.flash('success','You are signed up.')
-   		res.send('Success: You are signed up.');
-        //res.redirect('/');
+   		//res.send('Success: You are signed up.');
+        res.redirect('/');
       }else{
         // throw new Error('A user with that e-mail address already exists.');
         // res.send('A user with that e-mail address already exists.');

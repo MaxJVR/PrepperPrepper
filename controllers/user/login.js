@@ -15,7 +15,7 @@ router.post('/',function(req,res){
       }else if (user){
         req.session.user = user.id;//logged in.....
         //req.flash('success', 'You are logged in')
-        res.send('succesful login!');
+        res.redirect('/');
       }else{
         //req.flash('danger','invalid username or password');
         res.send('failed!');
