@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
 		});
     }
     else{
-		res.send('You do not have an account!');
+		res.send('<h3>Why would you try and view a profile page if you are not signed in? Come on; use your head... </h3><ul><li><a href="/signup">Create Account</a></li><li><a href="/login">Log in</a></li><li><a href="/">Go Back</a></li></ul>');
 	}
     
 });
