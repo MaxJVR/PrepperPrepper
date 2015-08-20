@@ -15,7 +15,10 @@ router.get('/', function(req, res) {
 		res.render('user/profile', {cities : all_cities, user: req.currentUser});
 	});*/
 
-  db.city_info.findAll({include:[db.user]}).then(function(all_cities){
+  //db.city_info.findAll({include:[db.user]}).then(function(all_cities){
+
+  db.city.findAll({include:[db.user]}).then(function(all_cities){
+
     res.render('user/profile', {cities : all_cities, user: req.currentUser});
   });
 

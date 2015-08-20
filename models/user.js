@@ -6,6 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING,
+<<<<<<< HEAD
     prep_score: DataTypes.INTEGER,
     city: DataTypes.STRING,
     cityInfoId: DataTypes.INTEGER,
@@ -17,8 +18,20 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
 		models.user.belongsTo(models.city_info, {foreignKey: 'cityInfoId', as: 'cityInfo'} );
+=======
+    prepScore: DataTypes.INTEGER,
+    cityId: DataTypes.INTEGER,
+    gallons: DataTypes.INTEGER,
+    meals: DataTypes.INTEGER,
+    guns: DataTypes.INTEGER
+  }, {
+    classMethods: {
+      associate: function(models) {
+        models.user.belongsTo(models.city, {through: "cityId"});
+        // associations can be defined here
+>>>>>>> 1aed9857f1b91815e9321d3c779613aebb7a5e2e
       },
-      authenticate: function(email,password,callback){
+          authenticate: function(email,password,callback){
         this.find({where:{email:email}}).then(function(user){
           if(user){
             bcrypt.compare(password,user.password,function(err,result){
