@@ -1,7 +1,7 @@
 var db = require('./models');
 db.user.findOne().then(function(user){
-	db.city.findOne().then(function(city){
-		user.addCity(city);
+	db.city.findById(user.cityId).then(function(city){
+		console.log(city.name)
 	});
 });
 
