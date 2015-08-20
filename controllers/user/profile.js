@@ -16,8 +16,10 @@ router.get('/', function(req, res) {
 	});*/
 
   //db.city_info.findAll({include:[db.user]}).then(function(all_cities){
-    res.render('user/profile', {user: req.currentUser});
-  //});
+
+	db.city.findAll({include:[db.user]}).then(function(all_cities){
+		res.render('user/profile', {cities : all_cities, user: req.currentUser});
+	});
 
 });
 

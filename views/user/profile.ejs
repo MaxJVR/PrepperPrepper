@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 <!--
 <h1>My home page</h1>
 <% if(typeof user !== 'undefined') { %>
+=======
+<h1>Planning control center</h1>
+>>>>>>> 1aed9857f1b91815e9321d3c779613aebb7a5e2e
 
-	Hello, <b><%= typeof user.name === 'string' ? user.name : 'Unknown' %></b>.
 
+<<<<<<< HEAD
 	<a href="/logout" class="btn btn-primary">Logout</a>
 	<h3>Resources</h3>
  -->
@@ -37,6 +41,11 @@
 	</form>
 
 <% } %>
+=======
+	<div class="container"><h4>Hello <%= user.name %>, from <%= user.cities.name %></h4>
+  </div>
+  <h3>Resources</h3>
+>>>>>>> 1aed9857f1b91815e9321d3c779613aebb7a5e2e
 
 <br>
 <br>
@@ -50,10 +59,16 @@
           <img class="activator responsive-img" src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/">
         </div>
         <div class="card-content">
+<<<<<<< HEAD
         <% if(typeof user !== 'undefined') { %>
           <span class="card-title activator"><h4><%= typeof user.name === 'string' ? user.name : 'Unknown' %><i class="material-icons right">info_outline</i></h4></span>
         <% } %>
           <h6 class="right-align">Prep Score #</h6>
+=======
+
+          <span class="card-title activator"><h3><i class="material-icons right">info_outline</i><h3></span>
+          <p><a href="#"></a></p>
+>>>>>>> 1aed9857f1b91815e9321d3c779613aebb7a5e2e
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">This is your profile!<i class="material-icons right">close</i></span>
@@ -135,29 +150,25 @@
           <%  %>
             <tr>
               <td>Food</td>
-              <td>72hrs</td>
+              <td>Number of meals: <%= user.meals %></td>
+              <td>Living in <%= user.city %>, you should have <%= cities[0].suggested_meals %></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
           <%  %>
             <tr>
               <td>Water</td>
-              <td>72hrs</td>
+              <td>Gallons of water: <%= user.gallons %></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
             <tr>
               <td>Firearms</td>
-              <td>3</td>
+              <td>Total number of guns: <%= user.guns %></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
-            <tr>
-              <td>Ammo</td>
-              <td>300rds</td>
-              <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
-              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
-            </tr>
+
           <%  %>
           </tbody>
         </table>
