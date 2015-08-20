@@ -31,7 +31,8 @@ router.get('/', function(req, res) {
 
 router.post("/", function(req,res){
   db.user.update({
-    prep_score: req.body.prep_score
+    prepScore:(user.meals / city.reqMeals)
+    // pre score = (user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns)
   }).then(function(user){
     res.redirect('user/profile');
   });
