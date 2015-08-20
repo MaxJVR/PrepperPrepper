@@ -7,12 +7,16 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING,
     email: DataTypes.STRING,
     prep_score: DataTypes.INTEGER,
-    city: DataTypes.STRING
+    city: DataTypes.STRING,
+    gallons: DataTypes.INTEGER,
+    meals: DataTypes.INTEGER,
+    guns: DataTypes.INTEGER,
   },
   {
     classMethods: {
       associate: function(models) {
-        // models.user.hasMany(models.resources, {through: "user_resources"});
+        models.user.hasOne(models.city_info, {through: "user_city_info"});
+
       },
       authenticate: function(email,password,callback){
         this.find({where:{email:email}}).then(function(user){
@@ -40,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
             user.password = hash;
             cb(null,user);
           });
-        }); 
+        });
       }
     }
   });
