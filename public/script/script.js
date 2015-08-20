@@ -1,3 +1,9 @@
+  var options = [
+    {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' },
+    {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
+  ];
+  Materialize.scrollFire(options);
+
 
 function make_slider( params_obj ){
 
@@ -77,7 +83,7 @@ $( document ).ready(function(){
 
     $('.modal-trigger').leanModal();
 
-    //$('select').material_select();
+    $('.scrollspy').scrollSpy();
 
     // Pushpin for mini User Card in Achievements
     $('profileCardSmall').pushpin({ top: $('.row').offset().top });
@@ -94,7 +100,7 @@ $( document ).ready(function(){
     }).set_scale(1);
 
   var options = [
-    {selector: '#staggered-test', offset: 400, callback: 'globalFunction()' },
+    {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' },
     {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
   ];
   Materialize.scrollFire(options);
