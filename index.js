@@ -38,7 +38,11 @@ app.use('/assets', express.static('public'));
 // defines currentUser in the session
 app.use(function(req,res,next){
 
+<<<<<<< HEAD
   req.session.user = 2; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+=======
+  // req.session.user = 14; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+>>>>>>> 76e7363652b6016c232fafa2df284e8e3b4c5f32
   if(req.session.user){
 
 

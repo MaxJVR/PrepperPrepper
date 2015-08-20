@@ -9,6 +9,11 @@
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+  
+  <!-- jQuery ui -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
   <script type="text/javascript" src="assets/script/script.js"></script>
 </head>
 <body>
@@ -17,16 +22,22 @@
       <a href="/" class="brand-logo">Prepper</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li>
+      <% if(typeof user !== 'undefined') { %>
+        <li><a href="/logout" class="">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login" data-target="modal_signin" class="modal-trigger">Login</a></li>
+      <% } %>
+        <!-- <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li> -->
         <li><a href="profile">Profile</a></li>
-        <li><a href="mobile.html">Ranks</a></li>
-        <li><a href="mobile.html">Achievments</a></li>
+        <li><a href="#">Ranks</a></li>
+        <li><a href="#">Achievments</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+        <li><a href="/logout" class="">Logout</a></li>
         <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li>
         <li><a href="profile">Profile</a></li>
-        <li><a href="mobile.html">Ranks</a></li>
-        <li><a href="mobile.html">Achievments</a></li>
+        <li><a href="#">Ranks</a></li>
+        <li><a href="#">Achievments</a></li>
       </ul>
     </div>
   </nav>
