@@ -1,4 +1,9 @@
 var db = require('./models');
+db.user.findOne().then(function(user){
+	db.city.findOne().then(function(city){
+		user.addCity(city);
+	});
+});
 
 // Add a city
 // db.city_info.create({name: 'seattle', flood_info: 'floods', earthquake_info: 'earthquakes', marauder_info: 'arrrr.'});
