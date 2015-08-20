@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        models.city_info.hasMany(models.user);
       }
     }
   });

@@ -93,10 +93,11 @@ $( document ).ready(function(){
         units: 'Gallons'
     }).set_scale(1);
 
-    var options = [
-        {selector: 'testscroll', offset: 400, callback: 'Materialize.showStaggeredList("testscroll")' },
-    ];
-    Materialize.scrollFire(options);
+  var options = [
+    {selector: '#staggered-test', offset: 400, callback: 'globalFunction()' },
+    {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
+  ];
+  Materialize.scrollFire(options);
 
 });
 
