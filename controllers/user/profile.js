@@ -22,9 +22,14 @@ router.get('/', function(req, res) {
 	});
 */
 
-    db.city.findById(req.currentUser.cityId).then(function(city){
-    res.render('user/profile', {user: req.currentUser, city : city});
-    });
+	if(req.currentUser){
+		db.city.findById(req.currentUser.cityId).then(function(city){
+			res.render('user/profile', {user: req.currentUser, city : city});
+		});
+    }
+    else{
+		res.send('You do not have an account!');
+	}
     
 });
 

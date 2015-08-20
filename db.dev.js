@@ -1,9 +1,10 @@
 var db = require('./models');
-db.user.findOne().then(function(user){
+
+/*db.user.findOne().then(function(user){
 	db.city.findById(user.cityId).then(function(city){
 		console.log(city.name)
 	});
-});
+});*/
 
 // Add a city
 // db.city_info.create({name: 'seattle', flood_info: 'floods', earthquake_info: 'earthquakes', marauder_info: 'arrrr.'});
@@ -39,12 +40,30 @@ db.city_info.create({
 });*/
 
 
+
+/*
+db.city.findOne().then(function(c){
+	db.user.findOne().then(function(u){
+    //load posts for this author
+    
+        c.addUser(u);
+
+		c.getUsers().then(function(cu){
+			console.log( cu );
+		});
+        //do something with posts here
+    });
+});
+*/
+
+/*
 db.user.findOne().then(function(user){
-	db.city_info.findOne().then(function(city){
-		user.addCityInfo( city );
+	db.city.findOne().then(function(city){
+		console.log('-------');
+		console.log( user.getCity() ); //.addCity( city );
 	});
 });
-
+*/
 
 // list all users
 // db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ console.log(models[i].get() ) }  })

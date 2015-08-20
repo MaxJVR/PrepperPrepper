@@ -44,6 +44,31 @@
                   <label for="password2">Re-type your password</label>
                 </div>
               </div>
+              
+<div class="row">
+<div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+
+<select name="cityName">
+
+	<option value="" disabled selected>Choose your City!</option>
+		<% for(var i=0; i<cities.length; ++i){ %>
+		
+		<% // Select the city from the url parameters if one exists %>
+		<% if( cities[i].name === userCity ){ %>
+			<option class="city-name" selected="selected" value="<%= cities[i].get().name %>" >
+		<% }else{ %>
+			<option class="city-name" value="<%= cities[i].get().name %>" >
+		<% } %>
+		
+		<%= cities[i].get().name %></option>
+	<% } %>
+
+</select>
+</div>
+</div>
+              
+              
+              
               <div class="row">
                 <div class="input-field sign-up col s12 m6 l8 offset-l2 right-align">
                   <button id="sign-up" type="submit" name="action" class="waves-effect waves-light btn-flat amber">Sign Up</button>
