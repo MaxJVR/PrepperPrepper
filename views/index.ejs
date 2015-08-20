@@ -89,11 +89,7 @@
           <form method="GET" action="threats">
             <select name="city">
               <option value="" disabled selected>Choose your City!</option>
-              <% for(var i=0; i<cities.length; ++i){ %>
-                <option class="city-name" value="<%= cities[i].get().name %>" >
-                  <%= cities[i].get().name %>
-                </option>
-              <% } %>
+
             </select>
             <button id="threat-list" type="submit" name="action" class="waves-effect waves-light btn-flat amber red-text accent-4">Threat Down</button>
           </form>

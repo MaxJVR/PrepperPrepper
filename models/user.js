@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
   {
     classMethods: {
       associate: function(models) {
-        models.user.hasOne(models.city_info, {through: "user_city_info"});
+        // models.user.hasOne(models.city_info, {through: "users_city_infos"});
 
       },
       authenticate: function(email,password,callback){
