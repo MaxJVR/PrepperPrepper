@@ -23,7 +23,7 @@ function make_slider( params_obj ){
     // create the div that jQuery ui will make into a slider
     newSlider.slider = $('<div class="resourceSlider"></div>');
     conElem.append(newSlider.slider);
-    
+
     // create the div that will display the current position/value of the handle
     newSlider.handlePosTracker = $('<div class="priHandleTracker">0</div>');
     conElem.append(newSlider.handlePosTracker);
@@ -38,7 +38,7 @@ function make_slider( params_obj ){
 
     // create the functions to (re)scale the slider
     newSlider.set_scale = function(new_scale){
-        
+
         newSlider.rulerBar.empty();
         newSlider.scale = new_scale;
         newSlider.slider.slider( "option", "max", 100*newSlider.scale );
@@ -58,7 +58,7 @@ function make_slider( params_obj ){
             return true;
         }
     });
-    
+
     return newSlider;
 
 }
@@ -81,6 +81,10 @@ $( document ).ready(function(){
 
     // Pushpin for mini User Card in Achievements
     $('profileCardSmall').pushpin({ top: $('.row').offset().top });
+
+    $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
 
     // to generate a new slider
     var tSlide = make_slider({

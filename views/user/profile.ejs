@@ -1,27 +1,3 @@
-<h1>My home page</h1>
-<% if(typeof user !== 'undefined') { %>
-
-	Hello, <b><%= typeof user.name === 'string' ? user.name : 'Unknown' %></b>.
-	
-	<a href="/logout" class="btn btn-primary">Logout</a>
-	<h3>Resources</h3>
-
-
-	<% // DELETE THIS INLINE STYLE %>
-	<form style="margin:auto; width:400px" action="/profile" method="post" class="input-field" >
-		
-		<div id="waterResourceSliderWrapper" class="sliderWrapper"></div>
-		
-		<input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
-		<input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
-
-		<div id="foodSlider" class="resourceSlider" ></div>
-		<div id="gunSlider" class="resourceSlider" ></div>
-		<input type="submit" value="Save." >
-	</form>
-
-<% } %>
-
 <br>
 <br>
 <div class="container">
@@ -35,9 +11,9 @@
         </div>
         <div class="card-content">
         <% if(typeof user !== 'undefined') { %>
-          <span class="card-title activator"><h3><%= typeof user.name === 'string' ? user.name : 'Unknown' %><i class="material-icons right">info_outline</i><h3></span>
+          <span class="card-title activator"><h4><%= typeof user.name === 'string' ? user.name : 'Unknown' %><i class="material-icons right">info_outline</i></h4></span>
         <% } %>
-          <p><a href="#"></a></p>
+          <h6 class="right-align">Prep Score #</h6>
         </div>
         <div class="card-reveal">
           <span class="card-title grey-text text-darken-4">This is your profile!<i class="material-icons right">close</i></span>
@@ -66,9 +42,47 @@
 
   </div>
 
+<!-- Resources Card -->
   <div class="row">
+    <div class="col s12">
+      <div class="card z-depth-5 white-text grey darken-4">
+        <div class="col s12 m2 l2 offset-l2">
+          <h4 class="center-align">Water</h4>
+        </div>
+        <div class="col s12 m6 l6">
+          <% if(typeof user !== 'undefined') { %>
+          <% // DELETE THIS INLINE STYLE %>
+            <form style="margin:auto; width:400px" action="/profile" method="POST" class="input-field" >
+              <div id="waterResourceSliderWrapper" class="sliderWrapper"></div>
+              <input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
+              <input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
+
+              <div id="foodSlider" class="resourceSlider" ></div>
+
+              <div id="gunSlider" class="resourceSlider" ></div>
+
+              <button type="submit" name="action" class="waves-effect waves-light btn-flat amber">Update</button>
+            </form>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m12 l4 offset-l">
+    <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
+    <% if(typeof user !== 'undefined') { %>
+      <form method="post" action="/profile" class="input-field">
+        <p class="range-field">
+          <input type="range" id="" min="0" max="100" />
+        </p>
+      </form>
+    <% } %>
+    </div>
+  </div>
+</div>
+
 <!-- Supply Card -->
-    <div class="col s12 m12 l12 offset-">
+ <!--    <div class="col s12 m12 l12 offset-">
       <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
         <table class"bordered hoverable centered responsive-table">
           <thead>
@@ -110,10 +124,10 @@
         </table>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <!--   Disaster Cards (forEach) -->
-  <div class="row">
+<!--   <div class="row">
   <%  %>
     <div class="col s12 m6 l6">
       <div class="card medium disasterCard">
@@ -172,14 +186,14 @@
           <a href="#">Learn More</a>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
 
 
 <!-- Modal For Supplies-->
-  <div id="modal-supplies" class="modal bottom-sheet">
+<!--   <div id="modal-supplies" class="modal bottom-sheet">
     <div class="modal-content">
       <div class="row">
         <div class="input-field col s12 m6 l3 offset-l3">
@@ -195,7 +209,6 @@
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat amber">Update</a>
     </div>
-  </div>
+  </div> -->
 
 </div>
->>>>>>> c04b3357e5719146e6ebb9e8da7d2b584e104280
