@@ -5,7 +5,7 @@ var request = require('request');
 var bodyParser = require('body-parser');
 /* GET home page. */
 router.get('/', function(req, res) {
-	db.city_info.findAll().then(function(all_cities){
+	db.city.findAll().then(function(all_cities){
 		res.render('index', {cities : all_cities});
 	});
 });

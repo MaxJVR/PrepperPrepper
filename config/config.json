@@ -2,7 +2,7 @@
   "development": {
     "database": "PrepperPrepper",
     "host": "127.0.0.1",
-    "dialect": "postgresql"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",

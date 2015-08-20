@@ -4,10 +4,9 @@
       <br><br>
       <h1 class="header center black-text text-lighten-2">Prepper</h1>
       <div class="row center">
-        <h5 class="header col s12 light">An survival app designed to help prepare you for badassery</h5>
+        <h5 class="header col s12 light">An survival app designed to help prepare you for the worst</h5>
       </div>
       <br><br>
-
     </div>
   </div>
   <div class="parallax"><img src="assets/images/parasnorlax1.jpg" alt="Unsplashed background img 1"></div>
@@ -58,7 +57,7 @@
   <div class="section no-pad-bot">
     <div class="container testscroll valign">
       <div class="row valign" style="transform: translateX(0px); opacity: 1;">
-        <div class="col s12 m4 center-align">
+        <div class="col s12 m4 ">
           <h4 class="header col s12 white-text valign">ARE</h4>
           <br><br>
           <h4 class="header col s12 white-text valign">YOU</h4>
@@ -89,14 +88,16 @@
         <br>
           <form method="GET" action="threats">
             <select name="city">
+
               <option value="" disabled selected>Choose your City!</option>
               <% for(var i=0; i<cities.length; ++i){ %>
                 <option class="city-name" value="<%= cities[i].get().name %>" >
                   <%= cities[i].get().name %>
                 </option>
               <% } %>
+
             </select>
-            <button id="threat-list" type="submit" name="action" class="waves-effect waves-light btn-flat amber red-text accent-4">Threat Down</button>
+            <button id="threat-list" type="submit" name="action" class="waves-effect waves-light btn-flat amber white-text">Threat Down</button>
           </form>
         </div>
       </div>

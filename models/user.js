@@ -6,15 +6,18 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING,
-    prep_score: DataTypes.INTEGER,
-    city: DataTypes.STRING
-  },
-  {
+    prepScore: DataTypes.INTEGER,
+    cityId: DataTypes.INTEGER,
+    gallons: DataTypes.INTEGER,
+    meals: DataTypes.INTEGER,
+    guns: DataTypes.INTEGER
+  }, {
     classMethods: {
       associate: function(models) {
-        // models.user.hasMany(models.resources, {through: "user_resources"});
+        models.user.belongsTo(models.city, {through: "cityId"});
+        // associations can be defined here
       },
-      authenticate: function(email,password,callback){
+          authenticate: function(email,password,callback){
         this.find({where:{email:email}}).then(function(user){
           if(user){
             bcrypt.compare(password,user.password,function(err,result){
@@ -40,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
             user.password = hash;
             cb(null,user);
           });
-        }); 
+        });
       }
     }
   });
