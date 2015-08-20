@@ -24,7 +24,6 @@ form_generator.make_resource_slider = function(resource_name){
 // });
 
 router.get('/', function(req, res) {
-<<<<<<< HEAD
   db.city_info.findAll().then(function(all_cities){
     res.render('user/profile', {cities : all_cities, user: req.currentUser});
   });
@@ -36,9 +35,7 @@ router.post("/", function(req,res){
   }).then(function(user){
     res.redirect('user/profile');
   });
-=======
 	res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
->>>>>>> 76e7363652b6016c232fafa2df284e8e3b4c5f32
 });
 
 module.exports = router;

@@ -7,7 +7,10 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING,
     email: DataTypes.STRING,
     prep_score: DataTypes.INTEGER,
-    city: DataTypes.STRING
+    city: DataTypes.STRING,
+    gallons: DataTypes.INTEGER,
+    meals: DataTypes.INTEGER,
+    guns: DataTypes.INTEGER,
   },
   {
     classMethods: {

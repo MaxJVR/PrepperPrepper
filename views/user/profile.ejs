@@ -2,16 +2,16 @@
 <% if(typeof user !== 'undefined') { %>
 
 	Hello, <b><%= typeof user.name === 'string' ? user.name : 'Unknown' %></b>.
-	
+
 	<a href="/logout" class="btn btn-primary">Logout</a>
 	<h3>Resources</h3>
 
 
 	<% // DELETE THIS INLINE STYLE %>
 	<form style="margin:auto; width:400px" action="/profile" method="post" class="input-field" >
-		
+
 		<div id="waterResourceSliderWrapper" class="sliderWrapper"></div>
-		
+
 		<input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
 		<input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
 
@@ -22,18 +22,6 @@
 
 <% } %>
 
-<<<<<<< HEAD
-<div class="container">
- Hey, <%= user.name %>, your Prepper Score is: <%= user.prep_score %>
-  <h4>Based on living in <%= cities[0].get().name %>, on a scale of 1-5,</h4>
-  <h4>your flood threat is <%= cities[0].get().flood_threat_level %></h4>
-  <h6><%= cities[0].get().flood_info %></h6>
-  <h4>your earthquake threat is <%= cities[0].get().earthquake_threat_level %></h4>
-  <h6><%= cities[0].get().earthquake_info %></h6>
-  <h4>your marauder threat is <%= cities[0].get().marauder_threat_level %></h4>
-  <h6><%= cities[0].get().marauder_info %></h6>
-</div>
-=======
 <br>
 <br>
 <div class="container">
