@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
   {
     classMethods: {
       associate: function(models) {
-		models.user.belongsTo(models.city_info);
+		models.user.belongsTo(models.city_info, {foreignKey: 'cityInfoId', as: 'cityInfo'} );
       },
       authenticate: function(email,password,callback){
         this.find({where:{email:email}}).then(function(user){

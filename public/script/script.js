@@ -75,7 +75,7 @@ function make_slider( params_obj ){
             return true;
         }
     });
-    
+
     return newSlider;
 }
 
@@ -97,6 +97,10 @@ $( document ).ready(function(){
 
     // Pushpin for mini User Card in Achievements
     $('profileCardSmall').pushpin({ top: $('.row').offset().top });
+
+    $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
 
     // to generate a new slider
     var slides = [];
@@ -134,9 +138,10 @@ $( document ).ready(function(){
         console.log('prepScore: ' + prepScore);
     });
 
-    var options = [
-        {selector: 'testscroll', offset: 400, callback: 'Materialize.showStaggeredList("testscroll")' },
-    ];
-    Materialize.scrollFire(options);
+  var options = [
+    {selector: '#staggered-test', offset: 400, callback: 'globalFunction()' },
+    {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
+  ];
+  Materialize.scrollFire(options);
 
 });
