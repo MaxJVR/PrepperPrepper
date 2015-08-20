@@ -11,7 +11,7 @@
 	<h3> <%= user.city %>  </h3>
 
 	<% // DELETE THIS INLINE STYLE %>
-	<form style="margin:auto; width:400px" action="/profile" method="post" class="input-field" >
+	<form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
 		
 		<h5>Water</h5>
 		<div id="waterResourceSliderWrapper" class="sliderWrapper">
@@ -27,12 +27,9 @@
 
 		<h5>Guns</h5>
 		<div id="gunResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>30</span>
+			<span class='hidden_var recommended_var'>5</span>
 			<span class='hidden_var have_var'><%= user.guns %></span>
 		</div>
-
-		<input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
-		<input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
 
 		<div id="foodSlider" class="resourceSlider" ></div>
 		<div id="gunSlider" class="resourceSlider" ></div>

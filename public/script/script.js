@@ -19,28 +19,57 @@ function make_slider( params_obj ){
         handlePosTracker: 0,
         reccomendedAmount : parseInt(params_obj.container.find('.recommended_var').text()),
         reccomendedAmountMarker: 0,
+        reccomendedAmountTracker: 0,
+        hidden_input_have: 0,
+        double_button: 0,
+        fold_button: 0,
         rulerBar: 0,
         set_scale: 0,
+        resize : function(){;},
         get_balance: 0
     };
 
     var conElem = $(params_obj.container);
 
-    // create the div that will display the current position/value of the handle
-    newSlider.handlePosTracker = $('<div class="priHandleTracker">0</div>');
-    conElem.append(newSlider.handlePosTracker);
+    // create the div that will mark the recomended amount
+    newSlider.reccomendedAmountTracker = $('<span class="recHandleTracker">0</span>');
+    conElem.append(newSlider.reccomendedAmountTracker);
+
+    newSlider.double_button = $('<a href="#" class="doubleButton noselect">Zoom Out</a>');
+    newSlider.fold_button = $('<a href="#" class="foldButton noselect">Zoom In</a>');
+    conElem.append(newSlider.fold_button);
+    conElem.append(newSlider.double_button);
+    
+    newSlider.fold_button.click(function(){
+		var newScale = newSlider.scale / 2;
+		newSlider.set_scale(newScale);
+	});
+    
+    newSlider.double_button.click(function(){
+		var newScale = newSlider.scale * 2;
+		newSlider.set_scale(newScale);
+	});
+    
+    
+    newSlider.reccomendedAmountMarker = $('<div class="recTick"></div>');
+    conElem.append(newSlider.reccomendedAmountMarker);
+
+	// append the hidden inputs that will post to profile upon clicking save
+	newSlider.hidden_input_have = $('<input type="hidden" name="'+newSlider.name+'Have" value="">');
+	conElem.append(newSlider.hidden_input_have);
 
     // create the div that jQuery ui will make into a slider
     newSlider.slider = $('<div class="resourceSlider"></div>');
     conElem.append(newSlider.slider);
-    
+
     // create the ruler bar that will go beneath the slider
     newSlider.rulerBar = $('<div class="rulerBar"></div>');
     conElem.append(newSlider.rulerBar);
 
-    // create the div that will mark the recomended amount
-    newSlider.reccomendedAmountMarker = $('<div class="recTick"><span class="recHandleTracker">0</span></div>');
-    conElem.append(newSlider.reccomendedAmountMarker);
+    // create the div that will display the current position/value of the handle
+    newSlider.handlePosTracker = $('<div class="priHandleTracker">Have: 0</div>');
+    conElem.append(newSlider.handlePosTracker);
+
 
     newSlider.get_balance = function(){
         return (this.slider.slider( "option", "value" ) - this.reccomendedAmount) * this.importance;
@@ -54,13 +83,24 @@ function make_slider( params_obj ){
         this.slider.slider( "option", "max", 100*newSlider.scale );
 
         this.reccomendedAmountMarker.css('left', (((this.rulerBar.width()) / (100*this.scale)) * this.reccomendedAmount) + 'px');
-        this.reccomendedAmountMarker.find('.recHandleTracker').text('Reccomended:' + this.reccomendedAmount);
+        
+        this.reccomendedAmountTracker.text('Reccomended:' + this.reccomendedAmount);
 
         for( var i=1; i<10; ++i ){
-            this.rulerBar.append('<div class="rulerTick" style="margin-left:'+((this.rulerBar.width()/(10))-2)+'px;"><span class="tickNumber">'+(i*(10*this.scale))+'</span></div>');
+            this.rulerBar.append('<div class="rulerTick" style="margin-left:'+((this.rulerBar.width()/(10))-2)+'px"><span class="tickNumber">'+(i*(10*this.scale))+'</span></div>');
         }
         return this;
     }
+
+	$(window).resize(function() {
+
+        newSlider.rulerBar.empty();
+        for( var i=1; i<10; ++i ){
+			newSlider.reccomendedAmountMarker.css('left', (((newSlider.rulerBar.width()) / (100*newSlider.scale)) * newSlider.reccomendedAmount) + 'px');
+
+            newSlider.rulerBar.append('<div class="rulerTick" style="margin-left:'+((newSlider.rulerBar.width()/(10))-2)+'px"><span class="tickNumber">'+(i*(10*newSlider.scale))+'</span></div>');
+        }
+	});
 
     // try and get a value from the html page
     var text_val = parseInt(params_obj.container.find('.have_var').text());
@@ -72,6 +112,7 @@ function make_slider( params_obj ){
         max: 100,
         slide: function( event, ui ){
             newSlider.handlePosTracker.text( 'Have: ' + ui.value + ' ' + params_obj.units );
+            newSlider.hidden_input_have.val( ui.value );
             return true;
         }
     });
@@ -109,7 +150,6 @@ $( document ).ready(function(){
         name : 'waterResource',
         container: $('#waterResourceSliderWrapper'),
         units: 'Gallons',
-        reccomendedAmount: 40,
         importance: 0.9
     }).set_scale(1));
 
@@ -117,7 +157,6 @@ $( document ).ready(function(){
         name : 'foodResource',
         container: $('#foodResourceSliderWrapper'),
         units: 'Meals',
-        reccomendedAmount: 30,
         importance: 0.7
     }).set_scale(1));
 
@@ -125,7 +164,6 @@ $( document ).ready(function(){
         name : 'gunResource',
         container: $('#gunResourceSliderWrapper'),
         units: 'Guns',
-        reccomendedAmount: 25,
         importance: 0.5
     }).set_scale(1));
 

@@ -15,19 +15,20 @@ router.get('/', function(req, res) {
 		res.render('user/profile', {cities : all_cities, user: req.currentUser});
 	});*/
 
-  db.city_info.findAll({include:[db.user]}).then(function(all_cities){
-    res.render('user/profile', {cities : all_cities, user: req.currentUser});
-  });
+  //db.city_info.findAll({include:[db.user]}).then(function(all_cities){
+    res.render('user/profile', {user: req.currentUser});
+  //});
 
 });
 
 router.post("/", function(req,res){
-	db.user.update({
+	res.send(req.body);
+	
+	/*db.user.update({
 		prep_score: req.body.prep_score
 	}).then(function(user){
 		res.redirect('user/profile');
-	});
-		res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
+	});*/
 });
 
 module.exports = router;
