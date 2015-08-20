@@ -28,10 +28,18 @@ db.city_info.create({
 
 // db.user.create({ name: 'josh', password: 'josh', email: 'josh@josh.com', prep_score: '9001', city: 'Seattle' });
 
-db.user.findAll().then(function(models){
+/*db.user.findAll().then(function(models){
 	console.log( models[0].get() );
 	// models[0].update({'meals':75,'guns':50});
+});*/
+
+
+db.user.findOne().then(function(user){
+	db.city_info.findOne().then(function(city){
+		user.addCityInfo( city );
+	});
 });
+
 
 // list all users
 // db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ console.log(models[i].get() ) }  })

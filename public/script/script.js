@@ -63,14 +63,11 @@ function make_slider( params_obj ){
     }
 
     // try and get a value from the html page
-    var parsed_text = parseInt(params_obj.container.find('.have_var').text());
-    var user_val = (typeof(parsed_text) === NaN) ? parsed_text : 0;
-
-    console.log(parsed_text);
+    var text_val = parseInt(params_obj.container.find('.have_var').text());
 
     // jQuery ui does its magic and makes the slider
     newSlider.slider.slider({
-        value: parsed_text,
+        value: (isNaN(text_val) === true) ? 0 : text_val,
         min: 0,
         max: 100,
         slide: function( event, ui ){

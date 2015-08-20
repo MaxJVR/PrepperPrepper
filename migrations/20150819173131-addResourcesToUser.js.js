@@ -23,22 +23,22 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
 
-    return [
-      queryInterface.dropColumn(
-        'users',
-        'gallons',
-        Sequelize.INTEGER
-      ),
-      queryInterface.dropColumn(
-        'users',
-        'meals',
-        Sequelize.INTEGER
-      ),
-      queryInterface.dropColumn(
-        'users',
-        'guns',
-        Sequelize.INTEGER
-      ),
-    ];
+    // return [
+    //   queryInterface.dropColumn(
+    //     'users',
+    //     'gallons',
+    //     Sequelize.INTEGER
+    //   ),
+    //   queryInterface.dropColumn(
+    //     'users',
+    //     'meals',
+    //     Sequelize.INTEGER
+    //   ),
+    //   queryInterface.dropColumn(
+    //     'users',
+    //     'guns',
+    //     Sequelize.INTEGER
+    //   ),
+    // ];
   }
 };
