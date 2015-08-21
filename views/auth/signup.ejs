@@ -1,21 +1,26 @@
 <div class="container">
-    <div class="card grey darken-4">
+    <div class="card hoverable grey darken-4">
         <div class="card-content white-text">
           <div class="row">
-            <form class="col s12 form" method="POST" action="/signup">
-<!--               <div class="row">
-               <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
-                  <select>
+            <form class=" form" method="POST" action="/signup">
+              <div class="row">
+                <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
+                  <i class="material-icons prefix">my_location</i>
+                  <select name="cityName">
                     <option value="" disabled selected>Choose your City!</option>
-                    <option value="1">Seattle</option>
-                    <option value="2">Bellevue2</option>
-                    <option value="3">Everett</option>
-                    <option value="4">Spokane</option>
-                    <option value="5">Vancouver</option>
+                    <% for(var i=0; i<cities.length; ++i){ %>
+
+                      <% // Select the city from the url parameters if one exists %>
+                      <% if( cities[i].name === userCity ){ %>
+                        <option class="city-name left" selected="selected" value="<%= cities[i].get().name %>" >
+                      <% }else{ %>
+                        <option class="city-name left" value="<%= cities[i].get().name %>" >
+                      <% } %>
+                      <%= cities[i].get().name %></option>
+                    <% } %>
                   </select>
-                  <label></label>
                 </div>
-              </div> -->
+              </div>
               <div class="row">
                 <div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
                   <i class="material-icons prefix">perm_identity</i>
@@ -44,31 +49,6 @@
                   <label for="password2">Re-type your password</label>
                 </div>
               </div>
-              
-<div class="row">
-<div class="input-field sign-up col s12 m6 l8 offset-l2 white-text">
-
-<select name="cityName">
-
-	<option value="" disabled selected>Choose your City!</option>
-		<% for(var i=0; i<cities.length; ++i){ %>
-		
-		<% // Select the city from the url parameters if one exists %>
-		<% if( cities[i].name === userCity ){ %>
-			<option class="city-name" selected="selected" value="<%= cities[i].get().name %>" >
-		<% }else{ %>
-			<option class="city-name" value="<%= cities[i].get().name %>" >
-		<% } %>
-		
-		<%= cities[i].get().name %></option>
-	<% } %>
-
-</select>
-</div>
-</div>
-              
-              
-              
               <div class="row">
                 <div class="input-field sign-up col s12 m6 l8 offset-l2 right-align">
                   <button id="sign-up" type="submit" name="action" class="waves-effect waves-light btn-flat amber">Sign Up</button>

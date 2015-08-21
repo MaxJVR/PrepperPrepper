@@ -25,16 +25,12 @@
     <div class="col s12 m6 l5 offset-l2">
       <div class="card medium z-depth-5 white-text grey darken-4 achievementCard">
         <div class="card-image">
-          <img class="circle"  src="<%= icon %>">
-          <span class="card-title"></span>
+          <img class="circle"  src="<%= icon %>" height="150" width="50px">
+          <span class="card-title"><h2><%= location %></h2></span>
         </div>
         <div class="card-content">
-          <h6><%= location %></h6>
-          <h6><%= temp %></h6>
-          <p><%= wind %></p>
-        </div>
-        <div class="card-action">
-          <a href="#"></a>
+          <h6>Temp: <%= temp %></h6>
+          <p>Wind: <%= wind %></p>
         </div>
       </div>
     </div>
@@ -77,7 +73,7 @@
              <h3 class='center'>Resources</h3>
               <td>Food</td>
               <td>You have <%= user.meals %> meals stored.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqMeals %> meals.</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqMeals %> meals.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
@@ -85,14 +81,14 @@
             <tr>
               <td>Water</td>
               <td>You have <%= user.gallons %>gallons stored.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqGallons %> gallons.</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGallons %> gallons.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
             <tr>
               <td>Firearms</td>
               <td>You have <%= user.guns %> gun(s). Remember Ammo & gun safety.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqGuns %> gun(s).</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGuns %> gun(s).</td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
@@ -118,19 +114,19 @@
 
               <h5>Water</h5>
               <div id="waterResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>40</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqGallons %></span>
                 <span class='hidden_var have_var'><%= user.gallons %></span>
               </div>
 
               <h5>Food</h5>
               <div id="foodResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>35</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqMeals %></span>
                 <span class='hidden_var have_var'><%= user.meals %></span>
               </div>
 
               <h5>Guns</h5>
               <div id="gunResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>5</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqGuns %></span>
                 <span class='hidden_var have_var'><%= user.guns %></span>
               </div>
 
@@ -145,7 +141,7 @@
     </div>
   </div>
 
-  <div class="col s12 m12 l4 offset-l">
+<!--   <div class="col s12 m12 l4 offset-l">
     <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
       <form method="post" action="/profile" class="input-field">
         <p class="range-field">
@@ -153,7 +149,7 @@
         </p>
       </form>
     </div>
-  </div>
+  </div> -->
 
 <!--   Disaster Cards (forEach) -->
   <div class="row">
@@ -165,10 +161,10 @@
           <span class="card-title">Earthquake</span>
         </div>
         <div class="card-content">
-          <p><%= city.earthquakeInfo %></p>
+          <p><%= userCity.earthquakeInfo %></p>
         </div>
         <div class="card-action">
-          <a href="#">Make the div bigger somehow</a>
+          <a href="#">Learn More</a>
         </div>
       </div>
     </div>
@@ -176,14 +172,14 @@
     <div class="col s12 m6 l4">
       <div class="card hoverable white-text grey darken-4 z-depth-5">
         <div class="card-image">
-          <img src="http://wallpoper.com/images/00/43/08/11/2012-doomsday-wallpaper-2012-doomsday-movies_00430811.jpg">
+          <img src="http://staceydave.com/wp-content/uploads/2013/11/Tsunami-tall-wave2.gif">
           <span class="card-title">Flood</span>
         </div>
         <div class="card-content">
-          <p><%= city.floodInfo %></p>
+          <p><%= userCity.floodInfo %></p>
         </div>
         <div class="card-action">
-          <a href="#">Make the div bigger somehow</a>
+          <a href="#">Learn More</a>
         </div>
       </div>
     </div>
@@ -195,7 +191,7 @@
           <span class="card-title">Marauders</span>
         </div>
         <div class="card-content">
-         <p><%= city.marauderInfo %></p>
+         <p><%= userCity.marauderInfo %></p>
         </div>
         <div class="card-action">
           <a href="#">Learn More</a>
@@ -203,20 +199,7 @@
       </div>
     </div>
   </div>
-
-<!--     <div class="col s12 m6 l6">
-      <div class="card medium hoverable white-text grey darken-4 z-depth-5">
-        <div class="card-image">
-          <img src="http://www.wallpaperup.com/uploads/wallpapers/2013/07/26/124280/big_thumb_a508095ccf7de6d20d87b2de44a43b68.jpg">
-          <span class="card-title">Delete this</span>
-        </div>
-        <div class="card-content">
-          <p>We're not doing Nuclear threats (yet).</p> </div>
-        <div class="card-action">
-          <a href="#">Make the div bigger somehow</a>
-        </div>
-      </div>
-    </div> -->
+</div>
 
 
 <!-- Modal For Supplies-->
@@ -238,4 +221,3 @@
     </div>
   </div> -->
 
-</div>

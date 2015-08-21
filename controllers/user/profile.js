@@ -29,6 +29,7 @@ add to view
 
 router.get('/', function(req, res) {
 
+
   if(req.currentUser){
     db.city.findById(req.currentUser.cityId).then(function(city){
       var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/' + city.name + '.json';
@@ -38,7 +39,7 @@ router.get('/', function(req, res) {
        var temp = parsedData.current_observation.temp_f;
        var wind = parsedData.current_observation.wind_string;
        var icon = parsedData.current_observation.icon_url
-        res.render('user/profile', {user: req.currentUser, city : city, location: location, temp: temp, wind: wind, icon: icon});
+        res.render('user/profile', {user: req.currentUser, userCity : city, location: location, temp: temp, wind: wind, icon: icon});
       })
     });
   }
