@@ -4,8 +4,8 @@ var db = require('../models');
 
 /* GET leaderboard. */
 router.get('/', function(req, res) {
-  db.user.findAll().then(function(all_users){
-    res.render('leaderboard',{user: req.currentUser});
+  db.user.findAll().then(function(users){
+    res.render('leaderboard',{user: req.currentUser, users: users});
   });
 });
 

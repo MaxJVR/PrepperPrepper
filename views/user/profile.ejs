@@ -1,41 +1,3 @@
-<% if(typeof user !== 'undefined') { %>
-
-<h1>Planning control center</h1>
-
-	<h3> <%= user.city %>  </h3>
-
-	<% // DELETE THIS INLINE STYLE %>
-	<form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
-		
-		<h5>Water</h5>
-		<div id="waterResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>40</span>
-			<span class='hidden_var have_var'><%= user.gallons %></span>
-		</div>
-
-		<h5>Food</h5>
-		<div id="foodResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>35</span>
-			<span class='hidden_var have_var'><%= user.meals %></span>
-		</div>
-
-		<h5>Guns</h5>
-		<div id="gunResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>5</span>
-			<span class='hidden_var have_var'><%= user.guns %></span>
-		</div>
-
-		<div id="foodSlider" class="resourceSlider" ></div>
-		<div id="gunSlider" class="resourceSlider" ></div>
-		<input type="submit" value="Save." >
-	</form>
-
-<% } %>
-
-	<div class="container"><h4>Hello <%= user.name %>, from <%= city.name %> </h4>
-
-  </div>
-  <h3>Resources</h3>
 
 <br>
 <br>
@@ -49,8 +11,8 @@
           <img class="activator responsive-img" src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/">
         </div>
         <div class="card-content">
-          <span class="card-title activator"><h3><i class="material-icons right">info_outline</i><h3></span>
-          <p><a href="#"></a></p>
+          <span class="card-title activator"><h3><%= user.name %><i class="material-icons right">info_outline</i><h3></span>
+          <h6 class="right"><a href="#"></a>Prep Score: <%= user.prepScore %></h6>
 
         </div>
         <div class="card-reveal">
@@ -84,19 +46,33 @@
   <div class="row">
     <div class="col s12">
       <div class="card z-depth-5 white-text grey darken-4">
-        <div class="col s12 m2 l2 offset-l2">
+<!--         <div class="col s12 m2 l2 offset-l2">
           <h4 class="center-align">Water</h4>
-        </div>
-        <div class="col s12 m6 l6">
-          <% if(typeof user !== 'undefined') { %>
+        </div> -->
+        <div class="col s12 m6 l12">
+        <% if(typeof user !== 'undefined') { %>
           <% // DELETE THIS INLINE STYLE %>
-            <form style="margin:auto; width:400px" action="/profile" method="POST" class="input-field" >
-              <div id="waterResourceSliderWrapper" class="sliderWrapper"></div>
-              <input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
-              <input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
+          <form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
+
+              <h5>Water</h5>
+              <div id="waterResourceSliderWrapper" class="sliderWrapper">
+                <span class='hidden_var recommended_var'>40</span>
+                <span class='hidden_var have_var'><%= user.gallons %></span>
+              </div>
+
+              <h5>Food</h5>
+              <div id="foodResourceSliderWrapper" class="sliderWrapper">
+                <span class='hidden_var recommended_var'>35</span>
+                <span class='hidden_var have_var'><%= user.meals %></span>
+              </div>
+
+              <h5>Guns</h5>
+              <div id="gunResourceSliderWrapper" class="sliderWrapper">
+                <span class='hidden_var recommended_var'>5</span>
+                <span class='hidden_var have_var'><%= user.guns %></span>
+              </div>
 
               <div id="foodSlider" class="resourceSlider" ></div>
-
               <div id="gunSlider" class="resourceSlider" ></div>
 
               <button type="submit" name="action" class="waves-effect waves-light btn-flat amber">Update</button>
@@ -106,15 +82,14 @@
       </div>
     </div>
   </div>
+
   <div class="col s12 m12 l4 offset-l">
     <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
-    <% if(typeof user !== 'undefined') { %>
       <form method="post" action="/profile" class="input-field">
         <p class="range-field">
           <input type="range" id="" min="0" max="100" />
         </p>
       </form>
-    <% } %>
     </div>
   </div>
 

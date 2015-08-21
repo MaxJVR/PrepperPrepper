@@ -45,18 +45,18 @@ function make_slider( params_obj ){
     newSlider.fold_button = $('<a href="#" class="foldButton noselect">Zoom In</a>');
     conElem.append(newSlider.fold_button);
     conElem.append(newSlider.double_button);
-    
+
     newSlider.fold_button.click(function(){
 		var newScale = newSlider.scale / 2;
 		newSlider.set_scale(newScale);
 	});
-    
+
     newSlider.double_button.click(function(){
 		var newScale = newSlider.scale * 2;
 		newSlider.set_scale(newScale);
 	});
-    
-    
+
+
     newSlider.reccomendedAmountMarker = $('<div class="recTick"></div>');
     conElem.append(newSlider.reccomendedAmountMarker);
 
@@ -89,7 +89,7 @@ function make_slider( params_obj ){
         this.slider.slider( "option", "max", 100*newSlider.scale );
 
         this.reccomendedAmountMarker.css('left', (((this.rulerBar.width()) / (100*this.scale)) * this.reccomendedAmount) + 'px');
-        
+
         this.reccomendedAmountTracker.text('Reccomended:' + this.reccomendedAmount);
 
         for( var i=1; i<10; ++i ){

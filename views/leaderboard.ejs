@@ -5,30 +5,21 @@
       <div class="card-panel small center-align grey darken-4 white-text z-depth-5">
         <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle responsive-img">
         <p><%= typeof user.name === 'string' ? user.name : 'Unknown' %></p>
-        <p>Score</p>
+        <p><%= user.prepScore %></p>
       </div>
     </div>
 <!--     Leaderboard -->
     <div class="col s8 m10 l8">
       <ul class="collection leaderboard grey darken-4 z-depth-5">
-      <%  %>
+      <% users.forEach(function(user){ %>
+        <% user.sort %>
         <li class="collection-item avatar grey darken-4 white-text">
           <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
-          <span class="title">Prepper Name</span>
-          <a href="#!" class="right">Prepper Score</a>
+          <span class="title"><%= user.name %></span>
+          <a href="#!" class="right"><%= user.prepScore %></a>
         </li>
-      <%  %>
-        <li class="collection-item avatar grey darken-4 white-text">
-          <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
-          <span class="title">Prepper Name</span>
-          <a href="#!" class="right">Prepper Score</a>
-        </li>
-        <li class="collection-item avatar grey darken-4 white-text">
-          <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
-          <span class="title">Prepper Name</span>
-          <a href="#!" class="right">Prepper Score</a>
-        </li>
-        <li class="collection-item avatar grey darken-4 white-text">
+      <% }); %>
+<!--         <li class="collection-item avatar grey darken-4 white-text">
           <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
           <span class="title">Prepper Name</span>
           <a href="#!" class="right">Prepper Score</a>
@@ -63,6 +54,16 @@
           <span class="title">Prepper Name</span>
           <a href="#!" class="right">Prepper Score</a>
         </li>
+        <li class="collection-item avatar grey darken-4 white-text">
+          <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
+          <span class="title">Prepper Name</span>
+          <a href="#!" class="right">Prepper Score</a>
+        </li>
+        <li class="collection-item avatar grey darken-4 white-text">
+          <img src="http://images.akamai.steamusercontent.com/ugc/794066798558437531/DA15FA86ACF40D67E2009076909E3F272A9871B8/" alt="" class="circle">
+          <span class="title">Prepper Name</span>
+          <a href="#!" class="right">Prepper Score</a>
+        </li> -->
       </ul>
     </div>
 <!--     Top Scores  -->
