@@ -1,4 +1,11 @@
 {
+  "development": {
+    "username": "postgres",
+    "password": "post",
+    "database": "PrepperPrepper",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
   "development_paul": {
     "username": "postgres",
     "password": "davidson",
@@ -7,7 +14,6 @@
     "dialect": "postgres"
   },
   "test": {
-
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
