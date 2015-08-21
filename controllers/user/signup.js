@@ -36,8 +36,7 @@ router.post('/',function(req,res){
         db.city.findOne({ where : {name : req.body.cityName} }).then(function(city){
 			city.addUser(user);
 			req.session.user = user.get().id;
-			
-			res.send('<h4>Success:</h4><p>Your profile has been created and you are now signed in.</p><p><a href="/profile">Go to your new profile page!</a></p>');
+			res.redirect('/profile');
 		});
 	}else{
         // throw new Error('A user with that e-mail address already exists.');
