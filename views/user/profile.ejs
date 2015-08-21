@@ -61,7 +61,7 @@
              <h3 class='center'>Resources</h3>
               <td>Food</td>
               <td>You have <%= user.meals %> meals stored.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqMeals %> meals.</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqMeals %> meals.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
@@ -69,14 +69,14 @@
             <tr>
               <td>Water</td>
               <td>You have <%= user.gallons %>gallons stored.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqGallons %> gallons.</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGallons %> gallons.</td>
               <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
               <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
             <tr>
               <td>Firearms</td>
               <td>You have <%= user.guns %> gun(s). Remember Ammo & gun safety.</td>
-              <td>Living in <%= city.name %>, you should store  <%= city.reqGuns %> gun(s).</td>
+              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGuns %> gun(s).</td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td>
             </tr>
@@ -102,19 +102,19 @@
 
               <h5>Water</h5>
               <div id="waterResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>40</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqGallons %></span>
                 <span class='hidden_var have_var'><%= user.gallons %></span>
               </div>
 
               <h5>Food</h5>
               <div id="foodResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>35</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqMeals %></span>
                 <span class='hidden_var have_var'><%= user.meals %></span>
               </div>
 
               <h5>Guns</h5>
               <div id="gunResourceSliderWrapper" class="sliderWrapper">
-                <span class='hidden_var recommended_var'>5</span>
+                <span class='hidden_var recommended_var'><%= userCity.reqGuns %></span>
                 <span class='hidden_var have_var'><%= user.guns %></span>
               </div>
 
@@ -149,7 +149,7 @@
           <span class="card-title">Earthquake</span>
         </div>
         <div class="card-content">
-          <p><%= city.earthquakeInfo %></p>
+          <p><%= userCity.earthquakeInfo %></p>
         </div>
         <div class="card-action">
           <a href="#">Make the div bigger somehow</a>
@@ -164,7 +164,7 @@
           <span class="card-title">Flood</span>
         </div>
         <div class="card-content">
-          <p><%= city.floodInfo %></p>
+          <p><%= userCity.floodInfo %></p>
         </div>
         <div class="card-action">
           <a href="#">Make the div bigger somehow</a>
@@ -179,7 +179,7 @@
           <span class="card-title">Marauders</span>
         </div>
         <div class="card-content">
-         <p><%= city.marauderInfo %></p>
+         <p><%= userCity.marauderInfo %></p>
         </div>
         <div class="card-action">
           <a href="#">Learn More</a>

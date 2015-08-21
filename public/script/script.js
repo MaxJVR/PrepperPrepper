@@ -7,15 +7,6 @@
 
 function make_slider( params_obj ){
 
-    /*  // possible parameter
-        params_obj.container
-        params_obj.name
-        params_obj.rangeMultiplier
-        params_obj.units
-        params_obj.reccomendedAmount
-        params_obj.importance
-        // is on a scale from 0-1
-    */
     var newSlider = {
         container : params_obj.container,
         name : params_obj.name,

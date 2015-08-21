@@ -32,7 +32,7 @@ router.get('/', function(req, res) {
 
 	if(req.currentUser){
 		db.city.findById(req.currentUser.cityId).then(function(city){
-			res.render('user/profile', {user: req.currentUser, city : city});
+			res.render('user/profile', {user: req.currentUser, userCity : city});
 		});
 
     }
