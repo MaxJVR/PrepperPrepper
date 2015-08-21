@@ -8,10 +8,6 @@ var db = require("../../models");
 //  res.render('user/profile', { user: req.currentUser });
 // });
 
-// city = "Seattle";
-// city_state = ["Seattle":"WA"];
-// state = city_state[city];
-
 // router.get('/', function(req, res) {    //fetching weather data
 //     var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
 //  request(url, function(error, response, data) {
@@ -33,19 +29,6 @@ add to view
 
 router.get('/', function(req, res) {
 
-  //res.render('user/profile', { user: req.currentUser });
-
-  /*db.city_info.findAll().then(function(all_cities){
-    res.render('user/profile', {cities : all_cities, user: req.currentUser});
-  });*/
-
-  //db.city_info.findAll({include:[db.user]}).then(function(all_cities){
-
-/*  db.city.findAll({include:[db.user]}).then(function(all_cities){
-    res.render('user/profile', {cities : all_cities, user: req.currentUser});
-  });
-*/
-
   if(req.currentUser){
     db.city.findById(req.currentUser.cityId).then(function(city){
       var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/' + city.name + '.json';
@@ -66,13 +49,20 @@ router.get('/', function(req, res) {
 });
 
 router.post("/", function(req,res){
-  db.user.update({
-    prepScore:(user.meals / city.reqMeals)
-    // pre score = (user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns)
-  }).then(function(user){
-    res.redirect('user/profile');
+  // save the users resources into their user account
+  db.user.findOne({ where: { id : req.currentUser.id } }).then(function(user){
+    db.city.findOne({ where: { id : user.cityId } }).then(function(city){
+      user.update({
+        gallons: req.body.waterResourceHave,
+        meals: req.body.foodResourceHave,
+        guns: req.body.gunResourceHave,
+        // generate a prep score for the user
+        prepScore : parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns))
+      }).then(function(user){
+        res.redirect('/profile');
+      });
+    });
   });
-  res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
 });
 
 module.exports = router;

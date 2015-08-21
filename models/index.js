@@ -19,7 +19,7 @@ if(config.use_env_variable){
 }
 
 
-var db        = {};
+var db = {};
 
 fs
   .readdirSync(__dirname)
