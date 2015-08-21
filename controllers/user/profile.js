@@ -53,16 +53,12 @@ router.post("/", function(req,res){
   db.user.findOne({ where: { id : req.currentUser.id } }).then(function(user){
     db.city.findOne({ where: { id : user.cityId } }).then(function(city){
 
-      var score = parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns));
+      user.gallons = parseInt(req.body.waterResourceHave);
+      user.meals = parseInt(req.body.foodResourceHave);
+      user.guns = parseInt(req.body.gunResourceHave);
+      user.prepScore = parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns));
 
-      console.log(score);
-
-      user.update({
-        gallons: req.body.waterResourceHave,
-        meals: req.body.foodResourceHave,
-        guns: req.body.gunResourceHave,
-        prepScore: 100
-      }).then(function(user){
+      user.save().then(function(){
         res.redirect('/profile');
       });
     });

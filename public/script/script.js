@@ -166,15 +166,6 @@ $( document ).ready(function(){
         importance: 0.5
     }).set_scale(1));
 
-    $('h1').click(function(){
-        var prepScore = 0;
-        console.log(slides);
-        for(var i=0; i<slides.length; ++i){
-            prepScore += slides[i].get_balance();
-        }
-        console.log('prepScore: ' + prepScore);
-    });
-
   var options = [
     {selector: '#staggered-test', offset: 400, callback: 'Materialize.showStaggeredList("#staggered-test")' },
     {selector: '.other-class', offset: 200, callback: 'globalFunction()' },
