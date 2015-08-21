@@ -7,7 +7,7 @@
 
 	<% // DELETE THIS INLINE STYLE %>
 	<form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
-		
+
 		<h5>Water</h5>
 		<div id="waterResourceSliderWrapper" class="sliderWrapper">
 			<span class='hidden_var recommended_var'>40</span>
@@ -97,8 +97,8 @@
           <% // DELETE THIS INLINE STYLE %>
             <form style="margin:auto; width:400px" action="/profile" method="POST" class="input-field" >
               <div id="waterResourceSliderWrapper" class="sliderWrapper"></div>
-              <input id="recWaterHiddenInput" name="recWater" value="10" type="hidden">
-              <input id="haveWaterHiddenInput" name="haveWater" value="10" type="hidden">
+              <input id="recWaterHiddenInput" name="recWater" value="<%= city.reqGallons %>" type="hidden">
+              <input id="haveWaterHiddenInput" name="haveWater" value="<%= user.gallons %>" type="hidden">
 
               <div id="foodSlider" class="resourceSlider" ></div>
 
