@@ -7,6 +7,27 @@ var db = require("../../models");
 //  res.render('user/profile', { user: req.currentUser });
 // });
 
+
+/*
+router.get('/', function(req, res) {    //fetching weather data
+    var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
+ request(url, function(error, response, data) {
+   var parsedData = JSON.parse(data);
+   var location = parsedData.current_observation.display_location.full;
+   var temp = parsedData.current_observation.temp_f;
+   var wind = parsedData.current_observation.wind_string;
+     res.render('user/profile', {location: location, temp: temp, wind: wind});
+ })
+}
+*/
+/*
+add to view
+<h1><%= location %></h1>
+<h1><%= temp %></h1>
+<h1><%= wind %></h1>
+*/
+
+
 router.get('/', function(req, res) {
 
   //res.render('user/profile', { user: req.currentUser });
@@ -22,14 +43,14 @@ router.get('/', function(req, res) {
   });
 */
 
-	if(req.currentUser){
-		db.city.findById(req.currentUser.cityId).then(function(city){
-			res.render('user/profile', {user: req.currentUser, city : city});
-		});
+  if(req.currentUser){
+    db.city.findById(req.currentUser.cityId).then(function(city){
+      res.render('user/profile', {user: req.currentUser, city : city});
+    });
     }
     else{
-		res.send('<h3>Why would you try and view a profile page if you are not signed in? Come on; use your head... </h3><ul><li><a href="/signup">Create Account</a></li><li><a href="/login">Log in</a></li><li><a href="/">Go Back</a></li></ul>');
-	}
+    res.send('<h3>Why would you try and view a profile page if you are not signed in? Come on; use your head... </h3><ul><li><a href="/signup">Create Account</a></li><li><a href="/login">Log in</a></li><li><a href="/">Go Back</a></li></ul>');
+  }
 
 });
 
@@ -40,7 +61,7 @@ router.post("/", function(req,res){
   }).then(function(user){
     res.redirect('user/profile');
   });
-	res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
+  res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
 });
 
 module.exports = router;
