@@ -1,1 +1,15 @@
 Prepper Prepper is a Node.js app that allows users to evaluate any potential threats for disaster in their area and get information on how to preppare accordingly.
+
+
+TO DO
+
+ADD FUNCTIONS
+-add in image hosting api
+
+
+TWEAKS
+-redo city resource level needs
+
+-redo slider levels
+-restyle slider
+-
