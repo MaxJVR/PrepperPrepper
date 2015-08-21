@@ -79,8 +79,8 @@ background-size: cover;
 }
 
 /* My styles for the sliders */
-
 .resourceSlider{
+  background-color: #ffc107;
 	width: 100%;
 }
 
@@ -107,7 +107,7 @@ background-size: cover;
 }
 
 .rulerBar{
-	background-color: silver;
+	/*background-color: silver;*/
 	height: 30px;
 }
 
@@ -124,7 +124,7 @@ background-size: cover;
 }
 
 .recTick{
-	background-color: #00ff00;
+	background-color: #00c853;
 	position: relative;
 	top: 0px;
 	width: 2px;
@@ -132,7 +132,7 @@ background-size: cover;
 }
 
 .recHandleTracker{
-	color: #00ff00;
+	color: #00c853;
 	position: relative;
 	width: auto;
 	height: 20px;
@@ -145,6 +145,7 @@ background-size: cover;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    visibility: hidden;
 }
 
 .doubleButton{

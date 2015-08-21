@@ -123,8 +123,6 @@ $( document ).ready(function(){
 
     $('.parallax').parallax();
 
-    $('.tooltipped').tooltip({delay: 50});
-
     $('input#input_text, textarea#textarea1').characterCounter();
 
     $('select').material_select();
@@ -141,6 +139,8 @@ $( document ).ready(function(){
     });
 
      $('.slider').slider({full_width: true});
+
+     $('.tooltipped').tooltip({delay: 50});
 
     // to generate a new slider
     var slides = [];
