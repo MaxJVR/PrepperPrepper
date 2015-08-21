@@ -25,6 +25,7 @@
     "express-ejs-layouts": "~1.1.0",
     "express-session": "^1.11.3",
     "request": "^2.61.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "morgan": "~1.6.1"
   }
 }
