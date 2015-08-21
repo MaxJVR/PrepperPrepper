@@ -5,6 +5,18 @@ background-image: url('/assets/images/background.png');
 background-size: cover;
 }
 
+.card{
+  opacity:0.9;
+}
+
+.card-panel {
+  opacity:0.9;
+}
+
+.collection{
+  opacity:0.9;
+}
+
 .page_one{
   background-image: url('public/images/radioactive.jpg');
 }
@@ -65,6 +77,10 @@ background-size: cover;
 }
 .disasterCard{
 
+}
+.threatimg{
+  min-width: 360px;
+  min-height: 270px;
 }
 
 /*LEADERBOARD PAGE*/
@@ -269,3 +285,11 @@ height:125%;
     content:'j';
 }
 
+.weathericon{
+  width: 70px%;
+  height: 70px;
+}
+.weather{
+  width: 400px%;
+  height: 400px;
+}
