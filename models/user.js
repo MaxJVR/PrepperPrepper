@@ -14,7 +14,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        models.user.belongsTo(models.city, {through: "cityId"});
+		models.user.belongsTo(models.city)
+        // models.user.belongsTo(models.city, {through: "cityId"});
         // associations can be defined here
       },
           authenticate: function(email,password,callback){

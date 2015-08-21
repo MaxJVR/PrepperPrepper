@@ -11,11 +11,11 @@ threat_scale.push('severe');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  
+
   if(req.query.city){
   	// It is possible for there to be multiple cities with the same name.
   	// This is why I am using Find instead of findAll
-  	db.city_info.findAll({where: { name: req.query.city } }).then(function(city_results){
+  	db.city.findAll({where: { name: req.query.city } }).then(function(city_results){
   		res.render('threats',{ cities: city_results, scale: threat_scale });
   	});
 

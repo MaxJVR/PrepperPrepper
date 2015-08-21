@@ -1,15 +1,16 @@
 var db = require('./models');
-db.user.findOne().then(function(user){
+
+/*db.user.findOne().then(function(user){
 	db.city.findById(user.cityId).then(function(city){
 		console.log(city.name)
 	});
-});
+});*/
 
 // Add a city
 // db.city_info.create({name: 'seattle', flood_info: 'floods', earthquake_info: 'earthquakes', marauder_info: 'arrrr.'});
 
 // clear/destroy the content of a table
-// db.city_info.findAll().then(function(models){ for(var i=0; i<models.length; ++i){models[i].destroy()}  })
+// db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){models[i].destroy()}  });
 
 // create Seattle model
 /*db.city_info.create({
@@ -31,8 +32,38 @@ db.city_info.create({
 
 }).then(function(new_city){console.log( new_city.get().name + ' created!')});*/
 
-//db.user.create({ name: 'josh', password: 'josh', email: 'josh@josh.com', prep_score: '9001', city: 'Seattle' });
+// db.user.create({ name: 'josh', password: 'josh', email: 'josh@josh.com', prep_score: '9001', city: 'Seattle' });
 
+/*db.user.findAll().then(function(models){
+	console.log( models[0].get() );
+	// models[0].update({'meals':75,'guns':50});
+});*/
+
+
+
+/*
+db.city.findOne().then(function(c){
+	db.user.findOne().then(function(u){
+    //load posts for this author
+    
+        c.addUser(u);
+
+		c.getUsers().then(function(cu){
+			console.log( cu );
+		});
+        //do something with posts here
+    });
+});
+*/
+
+/*
+db.user.findOne().then(function(user){
+	db.city.findOne().then(function(city){
+		console.log('-------');
+		console.log( user.getCity() ); //.addCity( city );
+	});
+});
+*/
 
 // list all users
 // db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ console.log(models[i].get() ) }  })

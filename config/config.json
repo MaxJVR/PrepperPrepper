@@ -1,13 +1,7 @@
 {
   "development": {
-
-    "database": "PrepperPrepper",
-    "host": "127.0.0.1",
-    "dialect": "postgresql"
-  },
-    "development_paul": {
     "username": "postgres",
-    "password": "davidson",
+    "password": "post",
     "database": "PrepperPrepper",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -24,6 +18,7 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres",
+    "use_env_variable": "DATABASE_URL"
   }
-}
+} 
