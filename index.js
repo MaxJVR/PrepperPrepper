@@ -20,7 +20,6 @@ app.use(session({
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
 app.set('view engine','ejs');
 
 // uncomment after placing your favicon in /public
@@ -39,9 +38,8 @@ app.use('/assets', express.static('public'));
 app.use(function(req,res,next){
 
 
-	// req.session.user = 2; // COMMENT OUT WHEN NOT IN DEVELOPMENT
 
-  //req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+	// req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
 
   if(req.session.user){
 
@@ -106,6 +104,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(3000);
+app.listen( process.env.PORT || 3000 );
 
 module.exports = app;

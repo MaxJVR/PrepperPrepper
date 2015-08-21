@@ -33,18 +33,13 @@ router.post('/',function(req,res){
       }
     }).spread(function(user,created){
       if(created){
-        // Add the city association
-
         db.city.findOne({ where : {name : req.body.cityName} }).then(function(city){
 			city.addUser(user);
 			req.session.user = user.get().id;
 			
 			res.send('<h4>Success:</h4><br>Your profile has been created and your are now signed in.<br><a href="/profile">Go to your new profile page!</a>');
 		});
-        
-   		//
-        //res.redirect('/');
-      }else{
+	}else{
         // throw new Error('A user with that e-mail address already exists.');
         // res.send('A user with that e-mail address already exists.');
         // req.flash('danger','A user with that e-mail address already exists.');
