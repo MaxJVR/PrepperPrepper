@@ -13,7 +13,7 @@ var app = express();
 // set up a new session.
 app.use(session({
   secret:'w8hi1v0lu89gwqu0moc8931fhyfidwa3r47v4',
-  resave: false,
+  resave: true,
   saveUninitialized: true
 }));
 
