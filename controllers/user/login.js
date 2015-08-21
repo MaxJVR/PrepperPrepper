@@ -13,12 +13,11 @@ router.post('/',function(req,res){
       if(err){
         res.send("err");
       }else if (user){
-        req.session.user = user.id;//logged in.....
-        //req.flash('success', 'You are logged in')
-        res.send('succesful login!');
+        req.session.user = user.id;
+        res.redirect('/profile');
       }else{
         //req.flash('danger','invalid username or password');
-        res.send('failed!');
+        res.send('failed! to log in.');
         //res.redirect('/');
       }
   });
