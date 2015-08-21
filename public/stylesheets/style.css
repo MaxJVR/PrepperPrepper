@@ -5,6 +5,18 @@ background-image: url('/assets/images/background.png');
 background-size: cover;
 }
 
+.card{
+  opacity:0.9;
+}
+
+.card-panel {
+  opacity:0.9;
+}
+
+.collection{
+  opacity:0.9;
+}
+
 .page_one{
   background-image: url('public/images/radioactive.jpg');
 }
