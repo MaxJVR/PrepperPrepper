@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 //city = "Seattle";
 //city_state = ["Seattle" : "WA"];
 //state = city_state[city];
-
+/*
 router.get('/apitest', function(req, res) {
 var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
     request(url, function(error, response, data) {
@@ -26,13 +26,6 @@ var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seat
       // movie.push(newMovie);
       res.send("/apitest", {data: location});
     })
-
 })
-
-
-
-
-
-
-
+*/
 module.exports = router;

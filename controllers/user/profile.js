@@ -7,6 +7,29 @@ var db = require("../../models");
 // 	res.render('user/profile', { user: req.currentUser });
 // });
 
+
+/*
+router.get('/', function(req, res) {    //fetching weather data
+    var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
+ request(url, function(error, response, data) {
+   var parsedData = JSON.parse(data);
+   var location = parsedData.current_observation.display_location.full;
+   var temp = parsedData.current_observation.temp_f;
+   var wind = parsedData.current_observation.wind_string;
+     res.render('user/profile', {location: location, temp: temp, wind: wind});
+ })
+} 
+*/
+/*
+
+add to view
+<h1><%= location %></h1>
+<h1><%= temp %></h1>
+<h1><%= wind %></h1>
+
+*/
+
+
 router.get('/', function(req, res) {
 
 	//res.render('user/profile', { user: req.currentUser });
