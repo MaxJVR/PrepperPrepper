@@ -10,22 +10,22 @@ router.get('/', function(req, res) {
 	});
 });
 
-//city = "Seattle";
-//city_state = ["Seattle" : "WA"];
-//state = city_state[city];
-/*
-router.get('/apitest', function(req, res) {
-var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
-    request(url, function(error, response, data) {
-      var parsedData = JSON.parse(data);
-      var location = parsedData.current_observation.display_location.full;
-      //var temp = parsedData.current_observation.temp_f;
-      //var wind = parsedData.current_observation.wind_string;
+// city = "Seattle";
+// city_state = ["Seattle" : "WA"];
+// state = city_state[city];
 
-      // var newMovie = new Movie(movieId, title, year, plot);
-      // movie.push(newMovie);
-      res.send("/apitest", {data: location});
-    })
-})
-*/
+// router.get('/apitest', function(req, res) {
+// var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/Seattle.json';
+//     request(url, function(error, response, data) {
+//       var parsedData = JSON.parse(data);
+//       var location = parsedData.current_observation.display_location.full;
+//       //var temp = parsedData.current_observation.temp_f;
+//       //var wind = parsedData.current_observation.wind_string;
+
+//       // var newMovie = new Movie(movieId, title, year, plot);
+//       // movie.push(newMovie);
+//       res.send("/apitest", {data: location});
+//     })
+// })
+
 module.exports = router;
