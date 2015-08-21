@@ -41,7 +41,7 @@ app.use(function(req,res,next){
 
 	// req.session.user = 2; // COMMENT OUT WHEN NOT IN DEVELOPMENT
 
-  req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
+  //req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
 
   if(req.session.user){
 

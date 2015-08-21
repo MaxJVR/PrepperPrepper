@@ -25,45 +25,50 @@
       <ul class="right hide-on-med-and-down">
       <% if(typeof user !== 'undefined') { %>
         <li><a href="/logout" class="">Logout</a></li>
-      <% } else { %>
-        <li><a href="/login" data-target="modal_signin" class="modal-trigger">Login</a></li>
-      <% } %>
-        <!-- <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li> -->
         <li><a href="profile">Profile</a></li>
         <li><a href="/leaderboard">Leaderboard</a></li>
+        <% } else { %>
         <!-- <li><a href="#">Achievments</a></li> -->
+        <li><a href="/login" data-target="modal_signin" class="modal-trigger">Login</a></li>
+        <!-- <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li> -->
+      <% } %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
+      <% if(typeof user !== 'undefined') { %>
         <li><a href="/logout" class="">Logout</a></li>
-        <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li>
         <li><a href="profile">Profile</a></li>
         <li><a href="/leaderboard">Leaderboard</a></li>
+        <% } else { %>
         <!-- <li><a href="#">Achievments</a></li> -->
+        <li><a href="/login" data-target="modal_signin" class="modal-trigger">Login</a></li>
+        <!-- <li><a href="#modal_signin" data-target="modal_signin" class="modal-trigger">Login</a></li> -->
+      <% } %>
       </ul>
     </div>
   </nav>
-  <!-- Modal signin -->
-  <div id="modal_signin" class="modal bottom-sheet">
-    <div class="modal-content">
+<!-- Modal signin -->
+  <div id="modal_signin" class="modal bottom-sheet grey darken-4">
+    <div class="modal-content grey darken-4">
       <div class="row">
-        <form class="form" method="post" action="auth/login">
-          <div class="input-field col s12 m6 l3 offset-l3">
+        <form class="form" method="POST" action="/login">
+          <div class="input-field sign-up col s12 m6 l3 offset-l3 white-text">
             <i class="material-icons prefix">email</i>
-            <input id="email" type="email" class="validate">
+            <input id="email" type="email" name="email" class="form-control validate">
             <label for="email">Email</label>
           </div>
-          <div class="input-field col s12 m6 l3">
+          <div class="input-field sign-up col s12 m6 l3 white-text">
             <i class="material-icons prefix">lock</i>
             <input id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
-        </form>
       </div>
     </div>
-    <div class="modal-footer">
-      <input type="submit" class="modal-action modal-close waves-effect waves-light btn-flat amber">Login</a>
+    <div class="modal-footer grey darken-4">
+      <button id="sign-up" type="submit" name="action" class="modal-action modal-close waves-effect waves-light btn-flat amber">Login</button>
     </div>
+    </form>
   </div>
+
   <%- body %>
 </body>
 </html>

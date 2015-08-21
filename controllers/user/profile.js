@@ -22,20 +22,25 @@ router.get('/', function(req, res) {
   });
 */
 
-    db.city.findById(req.currentUser.cityId).then(function(city){
-    res.render('user/profile', {user: req.currentUser, city : city});
-    });
+	if(req.currentUser){
+		db.city.findById(req.currentUser.cityId).then(function(city){
+			res.render('user/profile', {user: req.currentUser, city : city});
+		});
+    }
+    else{
+		res.send('<h3>Why would you try and view a profile page if you are not signed in? Come on; use your head... </h3><ul><li><a href="/signup">Create Account</a></li><li><a href="/login">Log in</a></li><li><a href="/">Go Back</a></li></ul>');
+	}
 
 });
 
 router.post("/", function(req,res){
-  res.send(req.body);
-
-  /*db.user.update({
-    prep_score: req.body.prep_score
+  db.user.update({
+    prepScore:(user.meals / city.reqMeals)
+    // pre score = (user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns)
   }).then(function(user){
     res.redirect('user/profile');
-  });*/
+  });
+	res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
 });
 
 module.exports = router;
