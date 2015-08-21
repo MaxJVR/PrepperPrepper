@@ -1,12 +1,12 @@
 body {
 /*background-color: #424242;*/
-background-image: url('http://i.imgur.com/RYDbXUS.jpg');
-background-size: ;
+/*background-image: url('http://i.imgur.com/RYDbXUS.jpg');*/
+background-image: url('/assets/images/background.png');
+background-size: cover;
 }
 
 .page_one{
   background-image: url('public/images/radioactive.jpg');
-
 }
 
 /*MAIN PAGE*/

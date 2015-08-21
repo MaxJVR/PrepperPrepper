@@ -38,11 +38,7 @@ app.use(function(req,res,next){
 
 
 
-	// req.session.user = 2; // COMMENT OUT WHEN NOT IN DEVELOPMENT
-
-  //req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
-
-
+	// req.session.user = 1; // COMMENT OUT WHEN NOT IN DEVELOPMENT
 
   if(req.session.user){
 
@@ -72,7 +68,8 @@ app.use('/login', require('./controllers/user/login'));
 app.use('/signup', require('./controllers/user/signup'));
 app.use('/profile', require('./controllers/user/profile'));
 app.use('/logout', require('./controllers/user/logout'));
-
+// leaderboard
+app.use('/leaderboard', require('./controllers/leaderboard'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
