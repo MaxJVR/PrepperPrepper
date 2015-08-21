@@ -2,41 +2,40 @@
 <% if(typeof user !== 'undefined') { %>
 
 <h1 class="center">Planning Control Center</h1>
+	<div class="center"><h4>Hello <%= user.name %>, from <%= city.name %>!</h4></div>
 
-	<h3> <%= user.city %>  </h3>
+  <h3> <%= user.city %>  </h3>
 
-	<% // DELETE THIS INLINE STYLE %>
-	<form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
+  <% // DELETE THIS INLINE STYLE %>
+  <form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
 
-		<h5>Water</h5>
-		<div id="waterResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>40</span>
-			<span class='hidden_var have_var'><%= user.gallons %></span>
-		</div>
+    <h5>Water</h5>
+    <div id="waterResourceSliderWrapper" class="sliderWrapper">
+      <span class='hidden_var recommended_var'>40</span>
+      <span class='hidden_var have_var'><%= user.gallons %></span>
+    </div>
 
-		<h5>Food</h5>
-		<div id="foodResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>35</span>
-			<span class='hidden_var have_var'><%= user.meals %></span>
-		</div>
+    <h5>Food</h5>
+    <div id="foodResourceSliderWrapper" class="sliderWrapper">
+      <span class='hidden_var recommended_var'>35</span>
+      <span class='hidden_var have_var'><%= user.meals %></span>
+    </div>
 
-		<h5>Guns</h5>
-		<div id="gunResourceSliderWrapper" class="sliderWrapper">
-			<span class='hidden_var recommended_var'>5</span>
-			<span class='hidden_var have_var'><%= user.guns %></span>
-		</div>
+    <h5>Guns</h5>
+    <div id="gunResourceSliderWrapper" class="sliderWrapper">
+      <span class='hidden_var recommended_var'>5</span>
+      <span class='hidden_var have_var'><%= user.guns %></span>
+    </div>
 
-		<div id="foodSlider" class="resourceSlider" ></div>
-		<div id="gunSlider" class="resourceSlider" ></div>
-		<input type="submit" value="Save." >
-	</form>
+    <div id="foodSlider" class="resourceSlider" ></div>
+    <div id="gunSlider" class="resourceSlider" ></div>
+    <input type="submit" value="Save" >
+  </form>
 
 <% } %>
 
 
-	<div class="center"><h4>Hello <%= user.name %>, from <%= city.name %>!</h4>
 
-  </div>
 
 <br>
 <br>
@@ -63,7 +62,6 @@
         </div>
       </div>
     </div>
-
 <!-- Achievments Card -->
  <!--    <div class="col s12 m6 l5 offset-l2">
       <div class="card medium z-depth-5 white-text grey darken-4 achievementCard">
@@ -111,7 +109,7 @@
       </div>
     </div>
   </div>
-  <div class="col s12 m12 l4 offset-l">
+ <!--  <div class="col s12 m12 l4 offset-l">
     <div class="card-panel hoverable white-text grey darken-4 z-depth-5 supplyCard">
     <% if(typeof user !== 'undefined') { %>
       <form method="post" action="/profile" class="input-field">
@@ -121,7 +119,7 @@
       </form>
     <% } %>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="row"> -->
