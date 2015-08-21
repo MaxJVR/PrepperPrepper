@@ -34,13 +34,13 @@ router.get('/', function(req, res) {
 });
 
 router.post("/", function(req,res){
-	res.send(req.body);
-	
-	/*db.user.update({
-		prep_score: req.body.prep_score
-	}).then(function(user){
-		res.redirect('user/profile');
-	});*/
+  db.user.update({
+    prepScore:(user.meals / city.reqMeals)
+    // pre score = (user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns)
+  }).then(function(user){
+    res.redirect('user/profile');
+  });
+	res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
 });
 
 module.exports = router;
