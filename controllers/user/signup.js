@@ -36,7 +36,6 @@ router.post('/',function(req,res){
         db.city.findOne({ where : {name : req.body.cityName} }).then(function(city){
 			city.addUser(user);
 			req.session.user = user.get().id;
-
 			res.redirect('/profile');
 		});
 	}else{

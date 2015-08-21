@@ -66,8 +66,8 @@ db.user.findOne().then(function(user){
 */
 
 // list all users
-// db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ console.log(models[i].get() ) }  })
+db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ console.log(models[i].get() ) }  })
 
 // destroy all users
-// db.city_info.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ models[i].destroy() }  })
+// db.user.findAll().then(function(models){ for(var i=0; i<models.length; ++i){ models[i].destroy() }  })
 
