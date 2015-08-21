@@ -41,6 +41,7 @@ module.exports = function(sequelize, DataTypes) {
         bcrypt.genSalt(10, function(err, salt) {
           var unsafe_pass = user.password;
           bcrypt.hash(unsafe_pass, salt, function(err, hash){
+            user.prepScore = 0;
             user.password = hash;
             cb(null,user);
           });

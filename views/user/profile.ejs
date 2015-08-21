@@ -1,9 +1,6 @@
-<br>
-<br>
 <div class="container">
   <div class="row">
-
-<!-- Profile Card -->
+    <!-- Profile Card -->
     <div class="col s12 m6 l5">
       <div class="card medium z-depth-5 white-text grey darken-4 profileCard">
         <div class="card-image waves-effect waves-block waves-light">
@@ -21,7 +18,7 @@
       </div>
     </div>
 
-<!-- Weather Card -->
+    <!-- Weather Card -->
     <div class="col s12 m6 l5 offset-l2">
       <div class="card center weather z-depth-5 white-text grey darken-4 achievementCard">
         <div class="card-content white-text">
@@ -33,26 +30,8 @@
         </div>
       </div>
     </div>
-
-<!-- Achievments Card -->
-<!--     <div class="col s12 m6 l5 offset-l2">
-      <div class="card medium z-depth-5 white-text grey darken-4 achievementCard">
-        <div class="card-image">
-          <img class="responsive-img" src="https://lh3.googleusercontent.com/h9xqvvuUe_jooJ_6KykNcfi4vPfIIAeQncid9OxV7Yo57tIwzb5Ms269d9AQzWUFEHg=w300">
-          <span class="card-title"></span>
-        </div>
-        <div class="card-content">
-        <%  %>
-          <h5>My Achievments</h5>
-        <%  %>
-        </div>
-        <div class="card-action">
-          <a href="#">All Achievments</a>
-        </div>
-      </div>
-    </div> -->
-
   </div>
+
 
 
 <!-- Supply Card -->
@@ -62,29 +41,27 @@
         <table class"bordered centered responsive-table">
           <thead>
             <tr>
-                <th data-field="item">Item</th>
-                <th data-field="quantity">Cached</th>
-                <th data-field="need">Needed</th>
-<!--                 <th data-field="new"><a class="waves-effect waves-circle waves-light btn-floating green tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Add Items"data-target="modal-supplies"><i class="material-icons">add</i></a></th> -->
+            <th data-field="item">Item</th>
+            <th data-field="quantity">Cached</th>
+            <th data-field="need">Needed</th>
+            <!-- <th data-field="new"><a class="waves-effect waves-circle waves-light btn-floating green tooltipped modal-trigger" data-position="left" data-delay="50" data-tooltip="Add Items"data-target="modal-supplies"><i class="material-icons">add</i></a></th> -->
             </tr>
           </thead>
           <tbody>
-          <%  %>
             <tr>
-             <h3 class='center'>Resources</h3>
-              <td>Food</td>
-              <td>You have <%= user.meals %> meals stored.</td>
-              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqMeals %> meals.</td>
-              <!-- <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
-              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
+            <h3 class='center'>Resources</h3>
+            <td>Food</td>
+            <td>You have <%= user.meals %> meals stored.</td>
+            <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqMeals %> meals.</td>
+            <!-- <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+            <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
             </tr>
-          <%  %>
             <tr>
-              <td>Water</td>
-              <td>You have <%= user.gallons %>gallons stored.</td>
-              <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGallons %> gallons.</td>
-             <!--  <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
-              <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
+            <td>Water</td>
+            <td>You have <%= user.gallons %> gallons stored.</td>
+            <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGallons %> gallons.</td>
+            <!--  <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
+            <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
             </tr>
             <tr>
               <td>Firearms</td>
@@ -92,16 +69,16 @@
               <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGuns %> gun(s).</td>
 <!--                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
-            </tr>
 
-          <%  %>
+            </tr>
           </tbody>
-        </table>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
 
-<!-- Resources Card -->
+
+  <!-- Resources Card -->
   <div class="row">
     <div class="col s12">
       <div class="card z-depth-5 white-text grey darken-4">
@@ -203,6 +180,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <!-- Modal For Supplies-->
@@ -223,4 +201,6 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat amber">Update</a>
     </div>
   </div> -->
+
+
 

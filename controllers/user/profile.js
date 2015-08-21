@@ -29,7 +29,6 @@ add to view
 
 router.get('/', function(req, res) {
 
-
   if(req.currentUser){
     db.city.findById(req.currentUser.cityId).then(function(city){
       var url = 'http://api.wunderground.com/api/48693023b2ae4001/conditions/q/WA/' + city.name + '.json';
@@ -43,8 +42,8 @@ router.get('/', function(req, res) {
       })
     });
   }
-    else{
-    res.send('<h3>Why would you try and view a profile page if you are not signed in? Come on; use your head... </h3><ul><li><a href="/signup">Create Account</a></li><li><a href="/login">Log in</a></li><li><a href="/">Go Back</a></li></ul>');
+  else{
+    res.send('<h3>Please <a href="/signup">Create Account</a> or  <a href="/login">Log in</a> to view the profile page. </h3><ul><li><a href="/">Go Back</a></li></ul>');
   }
 
 });
@@ -53,13 +52,13 @@ router.post("/", function(req,res){
   // save the users resources into their user account
   db.user.findOne({ where: { id : req.currentUser.id } }).then(function(user){
     db.city.findOne({ where: { id : user.cityId } }).then(function(city){
-      user.update({
-        gallons: req.body.waterResourceHave,
-        meals: req.body.foodResourceHave,
-        guns: req.body.gunResourceHave,
-        // generate a prep score for the user
-        prepScore : parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns))
-      }).then(function(user){
+
+      user.gallons = parseInt(req.body.waterResourceHave);
+      user.meals = parseInt(req.body.foodResourceHave);
+      user.guns = parseInt(req.body.gunResourceHave);
+      user.prepScore = parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns));
+
+      user.save().then(function(){
         res.redirect('/profile');
       });
     });
