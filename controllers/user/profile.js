@@ -32,19 +32,6 @@ add to view
 
 router.get('/', function(req, res) {
 
-	//res.render('user/profile', { user: req.currentUser });
-
-	/*db.city_info.findAll().then(function(all_cities){
-		res.render('user/profile', {cities : all_cities, user: req.currentUser});
-	});*/
-
-  //db.city_info.findAll({include:[db.user]}).then(function(all_cities){
-
-/*	db.city.findAll({include:[db.user]}).then(function(all_cities){
-		res.render('user/profile', {cities : all_cities, user: req.currentUser});
-	});
-*/
-
 	if(req.currentUser){
 		db.city.findById(req.currentUser.cityId).then(function(city){
 			res.render('user/profile', {user: req.currentUser, city : city});
@@ -57,13 +44,20 @@ router.get('/', function(req, res) {
 });
 
 router.post("/", function(req,res){
-  db.user.update({
-    prepScore:(user.meals / city.reqMeals)
-    // pre score = (user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns)
-  }).then(function(user){
-    res.redirect('user/profile');
+  // save the users resources into their user account
+  db.user.findOne({ where: { id : req.currentUser.id } }).then(function(user){
+    db.city.findOne({ where: { id : user.cityId } }).then(function(city){
+      user.update({
+        gallons: req.body.waterResourceHave,
+        meals: req.body.foodResourceHave,
+        guns: req.body.gunResourceHave,
+        // generate a prep score for the user
+        prepScore : parseInt((user.meals/city.reqMeals)+(user.gallons/city.reqGallons)+(user.guns/city.reqGuns))
+      }).then(function(user){
+        res.redirect('/profile');
+      });
+    });
   });
-	res.render('user/profile', { user: req.currentUser, form_gen : form_generator });
 });
 
 module.exports = router;
