@@ -66,6 +66,10 @@ background-size: cover;
 .disasterCard{
 
 }
+.threatimg{
+  min-width: 360px;
+  min-height: 270px;
+}
 
 /*LEADERBOARD PAGE*/
 .profileCardSmall{
@@ -269,3 +273,11 @@ height:125%;
     content:'j';
 }
 
+.weathericon{
+  width: 70px%;
+  height: 70px;
+}
+.weather{
+  width: 400px%;
+  height: 400px;
+}

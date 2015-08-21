@@ -23,12 +23,11 @@
 
 <!-- Weather Card -->
     <div class="col s12 m6 l5 offset-l2">
-      <div class="card medium z-depth-5 white-text grey darken-4 achievementCard">
-        <div class="card-image">
-          <img class="circle"  src="<%= icon %>" height="150" width="50px">
+      <div class="card center weather z-depth-5 white-text grey darken-4 achievementCard">
+        <div class="card-content white-text">
+        <br><br><br>
+          <img class="weathericon circle"  src="<%= icon %>">
           <span class="card-title"><h2><%= location %></h2></span>
-        </div>
-        <div class="card-content">
           <h6>Temp: <%= temp %></h6>
           <p>Wind: <%= wind %></p>
         </div>
@@ -55,9 +54,10 @@
 
   </div>
 
+
 <!-- Supply Card -->
   <div class="row">
-   <div class="col s12 m12 l12 offset-">
+   <div class="col s12">
       <div class="card-panel white-text grey darken-4 z-depth-5 supplyCard">
         <table class"bordered centered responsive-table">
           <thead>
@@ -88,7 +88,7 @@
             </tr>
             <tr>
               <td>Firearms</td>
-              <td>You have <%= user.guns %> gun(s). Remember Ammo & gun safety.</td>
+              <td>You have <%= user.guns %> gun(s) w/ 200rds Ammo min.</td>
               <td>Living in <%= userCity.name %>, you should store  <%= userCity.reqGuns %> gun(s).</td>
 <!--                 <td><a class="waves-effect waves-circle waves-light btn-floating amber tooltipped" data-position="left" data-delay="50" data-tooltip="Edit Selected Items"><i class="material-icons">edit</i></a></td>
                 <td><a class="waves-effect waves-circle waves-light btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Delete Selected Items"><i class="material-icons">delete</i></a></td> -->
@@ -105,37 +105,37 @@
   <div class="row">
     <div class="col s12">
       <div class="card z-depth-5 white-text grey darken-4">
-        <div class="col s12 m2 l2 offset-l2">
-        </div>
-        <div class="col s12 m6 l12">
-        <% if(typeof user !== 'undefined') { %>
-          <% // DELETE THIS INLINE STYLE %>
-          <form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
+        <div class="card-content white-text">
+          <div class="col s12 m6 l12">
+          <% if(typeof user !== 'undefined') { %>
+            <% // DELETE THIS INLINE STYLE %>
+            <form style="margin:auto; width:100%" action="/profile" method="post" class="input-field" >
 
-              <h5>Water</h5>
-              <div id="waterResourceSliderWrapper" class="sliderWrapper transparent">
-                <span class='hidden_var recommended_var'><%= userCity.reqGallons %></span>
-                <span class='hidden_var have_var'><%= user.gallons %></span>
-              </div>
+                <h5>Water</h5>
+                <div id="waterResourceSliderWrapper" class="sliderWrapper transparent">
+                  <span class='hidden_var recommended_var'><%= userCity.reqGallons %></span>
+                  <span class='hidden_var have_var'><%= user.gallons %></span>
+                </div>
 
-              <h5>Food</h5>
-              <div id="foodResourceSliderWrapper" class="sliderWrapper transparent">
-                <span class='hidden_var recommended_var'><%= userCity.reqMeals %></span>
-                <span class='hidden_var have_var'><%= user.meals %></span>
-              </div>
+                <h5>Food</h5>
+                <div id="foodResourceSliderWrapper" class="sliderWrapper transparent">
+                  <span class='hidden_var recommended_var'><%= userCity.reqMeals %></span>
+                  <span class='hidden_var have_var'><%= user.meals %></span>
+                </div>
 
-              <h5>Guns</h5>
-              <div id="gunResourceSliderWrapper" class="sliderWrapper transparent">
-                <span class='hidden_var recommended_var'><%= userCity.reqGuns %></span>
-                <span class='hidden_var have_var'><%= user.guns %></span>
-              </div>
+                <h5>Guns</h5>
+                <div id="gunResourceSliderWrapper" class="sliderWrapper transparent">
+                  <span class='hidden_var recommended_var'><%= userCity.reqGuns %></span>
+                  <span class='hidden_var have_var'><%= user.guns %></span>
+                </div>
 
-              <div id="foodSlider" class="resourceSlider" ></div>
-              <div id="gunSlider" class="resourceSlider" ></div>
+                <div id="foodSlider" class="resourceSlider" ></div>
+                <div id="gunSlider" class="resourceSlider" ></div>
 
-              <button type="submit" name="action" class="waves-effect waves-light btn-flat amber">Update</button>
-            </form>
-          <% } %>
+                <button type="submit" name="action" class="waves-effect waves-light btn-flat amber">Update</button>
+              </form>
+            <% } %>
+          </div>
         </div>
       </div>
     </div>
@@ -151,55 +151,58 @@
     </div>
   </div> -->
 
-<!--   Disaster Cards (forEach) -->
-  <div class="row">
-  <%  %>
-    <div class="col s12 m6 l4">
-      <div class="card hoverable white-text grey darken-4 z-depth-5">
-        <div class="card-image">
-          <img src="http://wallpaperbang.com/wp-content/uploads/2015/08/Earthquake-HD-Wallpapers.jpg">
-          <span class="card-title">Earthquake</span>
-        </div>
-        <div class="card-content">
-          <p><%= userCity.earthquakeInfo %></p>
-        </div>
-        <div class="card-action">
-          <a href="#">Learn More</a>
-        </div>
-      </div>
-    </div>
-  <%  %>
-    <div class="col s12 m6 l4">
-      <div class="card hoverable white-text grey darken-4 z-depth-5">
-        <div class="card-image">
-          <img src="http://staceydave.com/wp-content/uploads/2013/11/Tsunami-tall-wave2.gif">
-          <span class="card-title">Flood</span>
-        </div>
-        <div class="card-content">
-          <p><%= userCity.floodInfo %></p>
-        </div>
-        <div class="card-action">
-          <a href="#">Learn More</a>
-        </div>
-      </div>
-    </div>
 
+  <!--   Threat Cards -->
+  <div class="row">
     <div class="col s12 m6 l4">
-      <div class="card hoverable white-text grey darken-4 z-depth-5">
-        <div class="card-image">
-          <img src="http://i.kinja-img.com/gawker-media/image/upload/t_original/d4q8zz18np446g3tzkqb.jpg">
-          <span class="card-title">Marauders</span>
+      <div class="card medium z-depth-5 white-text grey darken-4">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator threatimg" src="http://wallpaperbang.com/wp-content/uploads/2015/08/Earthquake-HD-Wallpapers.jpg">
         </div>
         <div class="card-content">
-         <p><%= userCity.marauderInfo %></p>
+          <span class="card-title activator"><h4>Earthquake<i class="material-icons right">info_outline</i><h4></span>
+          <h6 class=""><a href="#"></a>Threat Level: <%= userCity.earthquakeThreatLevel %></h6>
         </div>
-        <div class="card-action">
-          <a href="#">Learn More</a>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">
+          <p><%= userCity.earthquakeInfo %></p>
+          <i class="material-icons right">close</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card medium z-depth-5 white-text grey darken-4">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator threatimg" src="http://staceydave.com/wp-content/uploads/2013/11/Tsunami-tall-wave2.gif">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator"><h4>Flood<i class="material-icons right">info_outline</i><h4></span>
+          <h6 class=""><a href="#"></a>Threat Level: <%= userCity.floodThreatLevel %></h6>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">
+          <p><%= userCity.floodInfo %></p>
+          <i class="material-icons right">close</i></span>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card medium z-depth-5 white-text grey darken-4">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator threatimg" src="http://i.kinja-img.com/gawker-media/image/upload/t_original/d4q8zz18np446g3tzkqb.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator"><h4>Marauder<i class="material-icons right">info_outline</i><h4></span>
+          <h6 class=""><a href="#"></a>Threat Level: <%= userCity.marauderThreatLevel %></h6>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">
+          <p><%= userCity.marauderInfo %></p>
+          <i class="material-icons right">close</i></span>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
 <!-- Modal For Supplies-->
